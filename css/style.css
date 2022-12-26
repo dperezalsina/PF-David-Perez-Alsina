@@ -88,6 +88,8 @@
     z-index: 100;
 }
 
+
+
 /*Navbar general*/
 
 .navbar{
@@ -151,61 +153,6 @@
     z-index: 100;
 }
 
-/*inicio vista para movil*/
-
-@media(max-width:830px){
-    .navbarInicio > .fa-bars{
-        display: block;
-        color: #735B46;
-        font-size: 50px;
-        padding: 35px;
-        order: -1;
-        z-index: 90;
-    }
-
-    .navbarInicio{
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .navbarInicio > ul{
-        flex-direction: column;
-        position: fixed;
-        background-color: #F2E7DC;
-        width: 215px;
-        height: 100vh;
-        padding-top: 90px;
-        text-align: center;
-        left: -215px;
-        z-index: 100;
-        transition: 0.5s;
-    }
-
-    .navbarInicio > .fa-bars:hover + ul{
-        left: 0;
-    } 
-
-    .navbarInicio > ul:hover{
-        left: 0;
-    }
-
-    .navbarInicio > ul > li:hover + .navbarInicio > ul{
-        background-color: aqua;
-        
-        
-    }
-
-    .navbarInicio > img{
-        width: 150px;
-        height: 119px;
-        margin-left: 0px;
-       
-    }
-
-
-
-}
-
 /*Header inicio*/
 
 .head{
@@ -235,6 +182,113 @@
     font-size: 64px;
 }
 
+/*inicio bootstrap*/
+
+.navbarInicioBootstrap{
+    position: relative;
+    display: flex;
+    background-color: #F2E7DC;
+    justify-content: space-between;
+}
+
+.navbarInicioBootstrap > img{
+    width: 150px;
+    height: 119px;
+    justify-content: left;
+    margin-left: 60px;
+}
+
+.navbarInicioBootstrap > .fa-bars{
+    display: none;
+}
+
+
+.navbarInicioBootstrap > ul{
+    height: 100%;
+    display: flex;
+    list-style: none;
+    margin-right: px;
+
+}
+
+.navbarInicioBootstrap > ul > li > a{
+    padding-inline: 40px;
+}
+.navbarInicioBootstrap  ul  li  a{
+    display: block;
+    padding-top: 47px;
+    text-decoration: none;
+    color: #735B46;
+    font-size: 24px;
+    font-family: 'Source Serif Pro', serif;
+    
+}
+
+.navbarInicioBootstrap > ul > li{
+    position: relative;
+}
+
+.navbarInicioBootstrap > ul > li:hover ul{
+    display: block;
+}
+
+.navbarInicioBootstrap > ul > li > ul{
+    display: none;
+    position: absolute;
+    background-color: #F2E7DC;
+    list-style: none;
+    left: 35px;
+    width: 180px;
+    text-decoration: none;
+    color: #735B46;
+    font-size: 24px;
+    font-family: 'Source Serif Pro', serif;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    z-index: 100;
+}
+
+.head-boot{
+    background-image: url(../img/estetica2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 321px !important;
+}
+
+.head-boot > div{
+    height: 100%;
+}
+
+.head-boot > div > h1{
+    display: block;
+    color: white;
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 200;
+    font-size: 64px;
+    height: 80px;
+}
+
+.btnBootstrap{
+    width: 250px !important;
+    height: 40px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #735B46;
+    background-color: #F2E7DC;
+    border-radius: 7px;
+    padding: 7px;
+    text-align: center;
+}
+
+@media (max-width: 992px){
+    .navbarInicioBootstrap  ul  li  a{
+        display: none;
+    }
+}
+
+/*fin inicio bootstrap*/
+
 /*imagen de fondo*/
 
 main{
@@ -245,7 +299,7 @@ main{
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.1;
+    opacity: 0.15;
     z-index: -1;
 }
 
@@ -357,22 +411,6 @@ main{
     margin-bottom: 5px;
 }
 */
-@media(max-width:1500px){
-    .cardPerfil{
-        width: auto;
-        height: 100%
-    }
-
-    .cardPerfil__parrafo{
-        width: auto;
-        height: 100%;
-        font-size: 16px;
-    }
-    .cardPerfil__img{
-        width: 100%;
-        height: 100%;
-    }
-}
 
 /*header vacumterapia*/
 

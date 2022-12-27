@@ -194,7 +194,6 @@
 .navbarInicioBootstrap > img{
     width: 150px;
     height: 119px;
-    justify-content: left;
     margin-left: 60px;
 }
 
@@ -281,10 +280,45 @@
     text-align: center;
 }
 
+.footIconBootstrap img{
+    width: 50px;
+    height: 50px;
+
+}
+
 @media (max-width: 992px){
     .navbarInicioBootstrap  ul  li  a{
         display: none;
     }
+    footer > section{
+        display: none !important;
+    }
+    .navbarInicioBootstrap > .fa-bars{
+        display: block;
+    }
+    .navbarInicioBootstrap > img{
+        order: 3;
+        margin-right: 10px;
+        
+    }
+}
+
+.footInicio{
+    background-color: #6F7370 !important;
+    height: 120px;
+}
+
+.footInicio section ul  li  a{
+    display: block;
+    padding: 7px;
+    text-decoration: none;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 14px;
+    color: white;
+}
+
+.subBootstrap{
+    list-style: none;
 }
 
 /*fin inicio bootstrap*/
@@ -976,7 +1010,7 @@ main{
 
 .footIcon{
     position: absolute;
-    right: 160px;
+    right: 110px;
     padding: 35px;
 }
 

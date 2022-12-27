@@ -908,7 +908,7 @@ main{
 .form{
     background-color: rgba(248, 242, 242, 0.877);
     border-radius: 20px;
-    
+    box-shadow: 5px 5px 15px 3px rgba(115,91,70,0.54);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -1005,6 +1005,7 @@ main{
 
 .locationMap{
     height: 650px;
+    box-shadow: 5px 5px 15px 3px rgba(115,91,70,0.54);
     border-color: #FFDAC5;    
 }
 
@@ -1078,6 +1079,12 @@ main{
     height: 50px;
     margin-left: 30px;
 }
+
+
+
+
+
+
 
     
 

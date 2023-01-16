@@ -51,12 +51,13 @@
   z-index: 100;
   transition: 1s;
 }
-.navbarInicioBootstrap > ul > li > ul a {
+.navbarInicioBootstrap > ul > li > ul li > a {
+  display: block;
   text-decoration: none;
   color: #735B46;
   font-size: 24px;
   font-family: "Source Serif Pro", serif;
-  padding: 10px;
+  padding-top: 47px;
 }
 .navbarInicioBootstrap > ul > li:hover ul {
   display: block;

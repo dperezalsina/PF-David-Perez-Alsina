@@ -5,31 +5,31 @@
   box-sizing: border-box;
 }
 
-.navbarInicioBootstrap {
+.navbar {
   position: relative;
   display: flex;
   background-color: #F2E7DC;
   justify-content: space-between;
 }
-.navbarInicioBootstrap > img {
+.navbar > img {
   width: 150px;
   height: 119px;
   margin-left: 60px;
   order: 1 !important;
 }
-.navbarInicioBootstrap > .fa-bars {
+.navbar > .fa-bars {
   display: none;
 }
-.navbarInicioBootstrap > ul {
+.navbar > ul {
   height: 100%;
   display: flex;
   list-style: none;
   order: 3 !important;
 }
-.navbarInicioBootstrap > ul > li {
+.navbar > ul > li {
   position: relative;
 }
-.navbarInicioBootstrap > ul > li > a {
+.navbar > ul > li > a {
   display: block;
   padding-top: 47px;
   text-decoration: none;
@@ -38,7 +38,7 @@
   font-family: "Source Serif Pro", serif;
   padding-inline: 40px;
 }
-.navbarInicioBootstrap > ul > li > ul {
+.navbar > ul > li > ul {
   display: none;
   position: absolute;
   background-color: #F2E7DC;
@@ -51,7 +51,7 @@
   z-index: 100;
   transition: 1s;
 }
-.navbarInicioBootstrap > ul > li > ul li > a {
+.navbar > ul > li > ul li > a {
   display: block;
   text-decoration: none;
   color: #735B46;
@@ -59,27 +59,373 @@
   font-family: "Source Serif Pro", serif;
   padding-top: 47px;
 }
-.navbarInicioBootstrap > ul > li:hover ul {
+.navbar > ul > li:hover ul {
   display: block;
 }
 
-.navbar {
+main {
   position: relative;
+}
+
+.fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.titles {
+  display: block;
+  position: absolute;
+  font-family: "Source Serif Pro", serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #735B46;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.titleTurnos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.headPages {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headPages > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.headPages > div > img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 80px;
+}
+
+.serviceSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.serviceDiv1 {
+  position: relative;
+  width: 1500px;
+  height: 490px;
+}
+.serviceDiv1 h2 {
+  display: block;
+  width: 100%;
+  height: 65px;
+  font-size: 48px;
+  font-family: "Source Serif Pro", serif;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+.serviceDiv1 p {
+  display: block;
+  width: 100%;
+  font-family: "Source Serif Pro", serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.serviceDiv2 {
+  position: relative;
+  margin-bottom: 80px;
+}
+.serviceDiv2 iframe {
+  width: 1500px;
+  height: 600px;
+}
+
+.serviceDiv3 {
+  position: relative;
+  width: 1500px;
+  margin-bottom: 40px;
+}
+.serviceDiv3 h3 {
+  display: block;
+  width: 100%;
+  height: 65px;
+  font-weight: 400;
+  font-family: "Source Serif Pro", serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.serviceDiv3 ul {
+  width: 100%;
+  list-style-position: inside;
+  font-family: "Source Serif Pro", serif;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.serviceDiv3 p {
+  width: 100%;
+  font-family: "Source Serif Pro", serif;
+  font-size: 18px;
+}
+
+.serviceDiv4 {
+  width: 1500px;
+  margin-bottom: 80px;
+}
+.serviceDiv4 h4 {
+  width: 100%;
+  height: 65px;
+  font-weight: 400;
+  font-family: "Source Serif Pro", serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.serviceDiv4 p {
+  width: 100%;
+  font-family: "Source Serif Pro", serif;
+  font-size: 18px;
+}
+
+.headVacum__fondo {
+  background-image: url(../../img/vacumterapia1.jpg);
+}
+
+.headTurnos {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.turn__ondas__title {
+  background-image: url(../../img/ondasRusasTurn.jpg);
+}
+
+.turn__masaj__title {
+  background-image: url(../../img/esteticaTurn.jpg);
+}
+
+.turn__vacum__title {
+  background-image: url(../../img/vacumTurn.jpg);
+}
+
+.turn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.turn > div {
+  width: 603px;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-bottom: 200px;
+}
+.turn > div div {
   display: flex;
   width: 100%;
-  height: 119px;
-  background-color: #F2E7DC;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
 }
-.navbar > img {
-  width: 150px;
-  height: 119px;
-  justify-content: left;
-  margin-left: 88px;
+.turn > div div h2 {
+  display: block;
+  width: 300px;
+  height: 38px;
+  font-family: "Source Serif Pro", serif;
+  color: white;
+  font-weight: 400;
+  text-align: center;
 }
-.navbar > ul {
-  position: absolute;
-  height: 100%;
+.turn > div div h4 {
+  width: 100%;
+  font-family: "Source Serif Pro", serif;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  margin: 30px 0px 30px 0px;
+}
+.turn > div table {
+  border-collapse: collapse;
+}
+.turn > div table th {
+  background-color: #735B46;
+  color: white;
+  border: solid white;
+  font-family: "Source Serif Pro", serif;
+  font-size: 30px;
+  text-align: center;
+  width: 300px;
+}
+.turn > div table td {
+  background-color: #FFDAC5;
+  color: #735B46;
+  width: 300px;
+  border: solid 1px;
+  font-family: "Source Serif Pro", serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 600px;
+  height: 800px;
+  padding: 10px;
+  margin: 50px;
+}
+.form > label {
+  font-family: "Source Serif Pro", serif;
+  font-size: 24px;
+  color: #735B46;
+}
+.form > label > input {
+  justify-content: center;
+  display: block;
+  margin: 10px 0px;
+  width: 100%;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background-color: #F2E7DC;
+  padding: 5px;
+  color: #735B46;
+  font-family: "Source Serif Pro", serif;
+  font-size: 20px;
+}
+.form > textarea {
+  display: block;
+  border: none;
+  border-radius: 7px;
+  background-color: #F2E7DC;
+  padding: 5px;
+  color: #735B46;
+  font-family: "Source Serif Pro", serif;
+  font-size: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+#selector {
+  justify-content: center;
+  display: block;
+  margin: 10px 0px;
+  width: 30%;
+  height: 30px;
+  border: none;
+  border-radius: 7px;
+  background-color: #F2E7DC;
+  padding: 5px;
+  color: #735B46;
+  font-family: "Source Serif Pro", serif;
+  font-size: 20px;
+}
+
+.formBtn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.formBtn input {
+  border: none;
+  background-color: #F2E7DC;
+  display: block;
+  width: 200px;
+  height: 40px;
+  font-family: "Source Serif Pro", serif;
+  font-size: 24px;
+  text-align: center;
+  color: #735B46;
+}
+
+.sectionContac {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.divLocation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 800px;
+  height: 800px;
+  margin: 50px;
+  padding: 10px;
+}
+
+.locationTitle {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "Source Serif Pro", serif;
+  font-size: 40px;
+  color: #735B46;
+}
+
+.locationMap {
+  width: 100%;
+  height: 600px;
+  border-color: #FFDAC5;
+}
+
+.locationParraf {
+  display: block;
+  text-align: center;
+}
+
+.foot {
+  background-color: #6F7370;
+  display: flex;
+  width: 100%;
+  height: 120px;
+  position: relative;
+}
+.foot section ul li a {
+  display: block;
+  padding: 7px;
+  text-decoration: none;
+  font-family: "Source Serif Pro", serif;
+  font-size: 14px;
+  color: white;
+}
+
+.sub1 {
+  position: absolute;
+  left: 350px;
   list-style: none;
-  right: 135px;
+  padding: 10px;
+}
+
+.sub2 {
+  position: absolute;
+  list-style: none;
+  right: 800px;
+  padding: 10px;
+}
+
+.footIcon {
+  position: absolute;
+  right: 160px;
+  padding: 35px;
+}
+.footIcon img {
+  width: 50px;
+  height: 50px;
+  margin-left: 30px;
 }/*# sourceMappingURL=style.css.map */

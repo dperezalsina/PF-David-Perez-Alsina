@@ -558,15 +558,15 @@ main {
 }
 
 .headVacum__fondo {
-  background-image: url(../../img/vacumterapia1.jpg);
+  background-image: url(../img/vacumterapia1.jpg);
 }
 
 .headOndas__fondo {
-  background-image: url(../../img/ondasRusas.jpg);
+  background-image: url(../img/ondasRusas.jpg);
 }
 
 .headMasaj__fondo {
-  background-image: url(../../img/masajes.jpg);
+  background-image: url(../img/masajes.jpg);
 }
 
 .masajAbdomen {
@@ -667,15 +667,15 @@ main {
 }
 
 .turn__ondas__title {
-  background-image: url(../../img/ondasRusasTurn.jpg);
+  background-image: url(../img/ondasRusasTurn.jpg);
 }
 
 .turn__masaj__title {
-  background-image: url(../../img/esteticaTurn.jpg);
+  background-image: url(../img/esteticaTurn.jpg);
 }
 
 .turn__vacum__title {
-  background-image: url(../../img/vacumTurn.jpg);
+  background-image: url(../img/vacumTurn.jpg);
 }
 
 .turn {

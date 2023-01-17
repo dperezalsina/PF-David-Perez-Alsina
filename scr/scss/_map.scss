@@ -6,24 +6,22 @@
     height: 800px;
     margin: 50px;
     padding: 10px;
+    h2{
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-family: 'Source Serif Pro', serif;
+        font-size: 40px;
+        color: #735B46;
+    }
+    iframe{
+        width: 100%;
+        height: 600px;
+        border-color: #FFDAC5;
+    }
+    p{
+        display: block;
+        text-align: center;
+    }
 }
 
-.locationTitle{
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-family: 'Source Serif Pro', serif;
-    font-size: 40px;
-    color: #735B46;
-}
-
-.locationMap{
-    width: 100%;
-    height: 600px;
-    border-color: #FFDAC5;    
-}
-
-.locationParraf{
-    display: block;
-    text-align: center;
-}

@@ -124,7 +124,7 @@ main {
 .serviceDiv1 {
   position: relative;
   width: 1500px;
-  height: 490px;
+  margin-bottom: 40px;
 }
 .serviceDiv1 h2 {
   display: block;
@@ -159,7 +159,7 @@ main {
   width: 1500px;
   margin-bottom: 40px;
 }
-.serviceDiv3 h3 {
+.serviceDiv3 h3, .serviceDiv3 h2 {
   display: block;
   width: 100%;
   height: 65px;
@@ -186,7 +186,7 @@ main {
   width: 1500px;
   margin-bottom: 80px;
 }
-.serviceDiv4 h4 {
+.serviceDiv4 h4, .serviceDiv4 h3 {
   width: 100%;
   height: 65px;
   font-weight: 400;
@@ -199,10 +199,101 @@ main {
   width: 100%;
   font-family: "Source Serif Pro", serif;
   font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.serviceOndas {
+  position: relative;
+  width: 1500px;
+  margin-bottom: 40px;
+}
+.serviceOndas h3 {
+  display: block;
+  width: 100%;
+  height: 65px;
+  font-weight: 400;
+  font-family: "Source Serif Pro", serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.serviceOndas div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-bottom: 40px;
+}
+.serviceOndas div ul {
+  list-style-position: inside;
+  font-family: "Source Serif Pro", serif;
+  font-size: 18px;
+}
+.serviceOndas div .list1 {
+  width: 40%;
+}
+.serviceOndas div .list2 {
+  width: 60%;
+}
+.serviceOndas p {
+  width: 100%;
+  font-family: "Source Serif Pro", serif;
+  font-size: 18px;
 }
 
 .headVacum__fondo {
   background-image: url(../../img/vacumterapia1.jpg);
+}
+
+.headOndas__fondo {
+  background-image: url(../../img/ondasRusas.jpg);
+}
+
+.headMasaj__fondo {
+  background-image: url(../../img/masajes.jpg);
+}
+
+.masajAbdomen {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.masajAbdomen h3 {
+  display: block;
+  width: 100%;
+  font-family: "Source Serif Pro", serif;
+  font-size: 30px;
+  text-align: center;
+  margin: 20px;
+}
+.masajAbdomen section {
+  width: 100%;
+  height: 300px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.masajAbdomen section div {
+  width: 660px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+.masajAbdomen section div ol {
+  height: 100px;
+  list-style-position: inside;
+  text-align: justify;
+  margin-bottom: 10px;
+}
+.masajAbdomen section div ol li ul {
+  list-style: none;
+  margin-left: 80px;
+}
+.masajAbdomen section img {
+  width: 650px;
+  height: 190px;
 }
 
 .headTurnos {
@@ -322,6 +413,21 @@ main {
   width: 100%;
   height: 200px;
 }
+.form div {
+  display: flex;
+  justify-content: space-evenly;
+}
+.form div input {
+  border: none;
+  background-color: #F2E7DC;
+  display: block;
+  width: 200px;
+  height: 40px;
+  font-family: "Source Serif Pro", serif;
+  font-size: 24px;
+  text-align: center;
+  color: #735B46;
+}
 
 #selector {
   justify-content: center;
@@ -338,22 +444,6 @@ main {
   font-size: 20px;
 }
 
-.formBtn {
-  display: flex;
-  justify-content: space-evenly;
-}
-.formBtn input {
-  border: none;
-  background-color: #F2E7DC;
-  display: block;
-  width: 200px;
-  height: 40px;
-  font-family: "Source Serif Pro", serif;
-  font-size: 24px;
-  text-align: center;
-  color: #735B46;
-}
-
 .sectionContac {
   display: flex;
   justify-content: space-evenly;
@@ -368,8 +458,7 @@ main {
   margin: 50px;
   padding: 10px;
 }
-
-.locationTitle {
+.divLocation h2 {
   display: block;
   width: 100%;
   text-align: center;
@@ -377,14 +466,12 @@ main {
   font-size: 40px;
   color: #735B46;
 }
-
-.locationMap {
+.divLocation iframe {
   width: 100%;
   height: 600px;
   border-color: #FFDAC5;
 }
-
-.locationParraf {
+.divLocation p {
   display: block;
   text-align: center;
 }
@@ -396,6 +483,18 @@ main {
   height: 120px;
   position: relative;
 }
+.foot section .sub1 {
+  position: absolute;
+  left: 350px;
+  list-style: none;
+  padding: 10px;
+}
+.foot section .sub2 {
+  position: absolute;
+  list-style: none;
+  right: 800px;
+  padding: 10px;
+}
 .foot section ul li a {
   display: block;
   padding: 7px;
@@ -404,27 +503,12 @@ main {
   font-size: 14px;
   color: white;
 }
-
-.sub1 {
-  position: absolute;
-  left: 350px;
-  list-style: none;
-  padding: 10px;
-}
-
-.sub2 {
-  position: absolute;
-  list-style: none;
-  right: 800px;
-  padding: 10px;
-}
-
-.footIcon {
+.foot div {
   position: absolute;
   right: 160px;
   padding: 35px;
 }
-.footIcon img {
+.foot div img {
   width: 50px;
   height: 50px;
   margin-left: 30px;

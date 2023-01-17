@@ -1,4 +1,7 @@
 .sectionContac{
     display: flex;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    @media(max-width:1036px){
+        flex-wrap: wrap;
+    }
 }

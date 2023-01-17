@@ -2,7 +2,14 @@
     position: relative;
     margin-bottom: 80px;
     iframe{
-        width: 1500px;
-        height: 600px;
+        width: 80vw;
+        height: 60vh;
+        @media(max-width: 960px){
+            height: 40vh;
+        }
+        @media(max-width: 812px){
+            width:100vw;
+            height: 38vh;
+        }
     }
 }

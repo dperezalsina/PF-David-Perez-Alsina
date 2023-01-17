@@ -3,4 +3,7 @@
     height: 100px;
     display: flex;
     flex-direction: column;
+    @media(max-width:812px){
+        margin-top: 120px;
+    }
 }

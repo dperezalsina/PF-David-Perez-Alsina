@@ -316,6 +316,21 @@ main {
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 1200px) {
+  .headPages {
+    height: 40vh;
+  }
+}
+@media (max-width: 812px) {
+  .headPages {
+    margin-top: 112px;
+  }
+}
+@media (max-width: 600px) {
+  .headPages {
+    height: 30vh;
+  }
+}
 .headPages > div {
   display: flex;
   flex-direction: column;
@@ -339,8 +354,10 @@ main {
 
 .serviceDiv1 {
   position: relative;
-  width: 1500px;
-  margin-bottom: 40px;
+  width: 100%;
+  margin: 0 30px 40px 30px;
+  padding: 30px;
+  text-align: justify;
 }
 .serviceDiv1 h2 {
   display: block;
@@ -350,8 +367,21 @@ main {
   font-family: "Source Serif Pro", serif;
   font-weight: 400;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: 40px;
+}
+@media (max-width: 942px) {
+  .serviceDiv1 h2 {
+    font-size: 36px;
+    margin-top: 0;
+    height: 10vh;
+  }
+}
+@media (max-width: 450px) {
+  .serviceDiv1 h2 {
+    font-size: 30px;
+    height: 10vh;
+  }
 }
 .serviceDiv1 p {
   display: block;
@@ -366,14 +396,27 @@ main {
   margin-bottom: 80px;
 }
 .serviceDiv2 iframe {
-  width: 1500px;
-  height: 600px;
+  width: 80vw;
+  height: 60vh;
+}
+@media (max-width: 960px) {
+  .serviceDiv2 iframe {
+    height: 40vh;
+  }
+}
+@media (max-width: 812px) {
+  .serviceDiv2 iframe {
+    width: 100vw;
+    height: 38vh;
+  }
 }
 
 .serviceDiv3 {
   position: relative;
-  width: 1500px;
-  margin-bottom: 40px;
+  width: 100%;
+  margin: 0 30px 40px 30px;
+  padding: 30px;
+  text-align: justify;
 }
 .serviceDiv3 h3, .serviceDiv3 h2 {
   display: block;
@@ -385,12 +428,28 @@ main {
   text-align: center;
   margin-bottom: 20px;
 }
+@media (max-width: 942px) {
+  .serviceDiv3 h3, .serviceDiv3 h2 {
+    font-size: 36px;
+    margin-top: 0;
+    height: 10vh;
+  }
+}
+@media (max-width: 450px) {
+  .serviceDiv3 h3, .serviceDiv3 h2 {
+    font-size: 30px;
+    height: 10vh;
+  }
+}
 .serviceDiv3 ul {
   width: 100%;
   list-style-position: inside;
   font-family: "Source Serif Pro", serif;
   font-size: 18px;
   margin-bottom: 30px;
+}
+.serviceDiv3 ul li {
+  padding: 10px;
 }
 .serviceDiv3 p {
   width: 100%;
@@ -399,8 +458,10 @@ main {
 }
 
 .serviceDiv4 {
-  width: 1500px;
-  margin-bottom: 80px;
+  width: 100%;
+  margin: 0 30px 80px 30px;
+  padding: 30px;
+  text-align: justify;
 }
 .serviceDiv4 h4, .serviceDiv4 h3 {
   width: 100%;
@@ -411,6 +472,19 @@ main {
   text-align: center;
   margin-bottom: 20px;
 }
+@media (max-width: 942px) {
+  .serviceDiv4 h4, .serviceDiv4 h3 {
+    font-size: 36px;
+    margin-top: 0;
+    height: 10vh;
+  }
+}
+@media (max-width: 450px) {
+  .serviceDiv4 h4, .serviceDiv4 h3 {
+    font-size: 30px;
+    height: 10vh;
+  }
+}
 .serviceDiv4 p {
   width: 100%;
   font-family: "Source Serif Pro", serif;
@@ -420,7 +494,7 @@ main {
 
 .serviceOndas {
   position: relative;
-  width: 1500px;
+  width: 100%;
   margin-bottom: 40px;
 }
 .serviceOndas h3 {
@@ -433,16 +507,33 @@ main {
   text-align: center;
   margin-bottom: 20px;
 }
+@media (max-width: 942px) {
+  .serviceOndas h3 {
+    font-size: 36px;
+    margin-top: 0;
+    height: 10vh;
+  }
+}
+@media (max-width: 450px) {
+  .serviceOndas h3 {
+    font-size: 30px;
+    height: 10vh;
+  }
+}
 .serviceOndas div {
-  width: 100%;
+  width: 90vw;
   height: 100%;
   display: flex;
+  margin: auto;
   margin-bottom: 40px;
 }
 .serviceOndas div ul {
   list-style-position: inside;
   font-family: "Source Serif Pro", serif;
   font-size: 18px;
+}
+.serviceOndas div ul li {
+  padding: 10px;
 }
 .serviceOndas div .list1 {
   width: 40%;
@@ -451,9 +542,19 @@ main {
   width: 60%;
 }
 .serviceOndas p {
-  width: 100%;
+  width: 100vw;
   font-family: "Source Serif Pro", serif;
   font-size: 18px;
+  text-align: justify;
+  padding: 10px;
+}
+@media (max-width: 812px) {
+  .serviceOndas > div {
+    flex-direction: column;
+  }
+  .serviceOndas > div .list1, .serviceOndas > div .list2 {
+    width: 100vw;
+  }
 }
 
 .headVacum__fondo {
@@ -476,6 +577,11 @@ main {
   flex-direction: column;
   margin-bottom: 20px;
 }
+@media (max-width: 812px) {
+  .masajAbdomen {
+    height: 100%;
+  }
+}
 .masajAbdomen h3 {
   display: block;
   width: 100%;
@@ -483,6 +589,11 @@ main {
   font-size: 30px;
   text-align: center;
   margin: 20px;
+}
+@media (max-width: 812px) {
+  .masajAbdomen h3 {
+    font-size: 24px;
+  }
 }
 .masajAbdomen section {
   width: 100%;
@@ -497,19 +608,50 @@ main {
   flex-direction: column;
   padding: 5px;
 }
+@media (max-width: 1320px) {
+  .masajAbdomen section div {
+    width: 60vw;
+    padding: 15px;
+  }
+}
 .masajAbdomen section div ol {
   height: 100px;
   list-style-position: inside;
   text-align: justify;
   margin-bottom: 10px;
 }
+@media (max-width: 812px) {
+  .masajAbdomen section div ol {
+    height: 90vh;
+  }
+}
+.masajAbdomen section div ol li {
+  padding: 10px;
+}
 .masajAbdomen section div ol li ul {
   list-style: none;
   margin-left: 80px;
+  margin: 30px;
 }
-.masajAbdomen section img {
+.masajAbdomen section div img {
   width: 650px;
   height: 190px;
+}
+@media (max-width: 1320px) {
+  .masajAbdomen section div img {
+    width: 60vw;
+  }
+}
+@media (max-width: 812px) {
+  .masajAbdomen section {
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  .masajAbdomen section div {
+    width: 90vw;
+    height: 40vh;
+  }
 }
 
 .headTurnos {
@@ -517,6 +659,11 @@ main {
   height: 100px;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 812px) {
+  .headTurnos {
+    margin-top: 120px;
+  }
 }
 
 .turn__ondas__title {
@@ -541,6 +688,13 @@ main {
   margin-top: 30px;
   margin-left: 40px;
   margin-bottom: 200px;
+}
+@media (max-width: 692px) {
+  .turn > div {
+    width: vw;
+    margin: 0;
+    margin-bottom: 90px;
+  }
 }
 .turn > div div {
   display: flex;
@@ -645,6 +799,26 @@ main {
   color: #735B46;
 }
 
+@media (max-width: 550px) {
+  .form {
+    margin: 0;
+    height: 800px;
+  }
+  .form > div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .form > div > input {
+    margin: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 430px) {
+  .form {
+    width: 100vw;
+  }
+}
 #selector {
   justify-content: center;
   display: block;
@@ -664,6 +838,11 @@ main {
   display: flex;
   justify-content: space-evenly;
 }
+@media (max-width: 1036px) {
+  .sectionContac {
+    flex-wrap: wrap;
+  }
+}
 
 .divLocation {
   display: flex;
@@ -673,6 +852,13 @@ main {
   height: 800px;
   margin: 50px;
   padding: 10px;
+}
+@media (max-width: 550px) {
+  .divLocation {
+    width: 100vw;
+    margin: 0;
+    height: 60vh;
+  }
 }
 .divLocation h2 {
   display: block;

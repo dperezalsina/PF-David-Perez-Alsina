@@ -6,7 +6,12 @@
         width: 603px;
         margin-top: 30px;
         margin-left: 40px;
-        margin-bottom: 200px; 
+        margin-bottom: 200px;
+        @media(max-width:692px){
+            width: vw;
+            margin: 0;
+            margin-bottom: 90px;
+        } 
         div{
             display: flex;
             width: 100%;

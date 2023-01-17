@@ -1,0 +1,89 @@
+.cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .card1{
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 1fr 1fr 80px;
+        grid-template-areas: "img parraf"
+                             "img parraf"
+                             "img btn";
+        width: 1500px;
+        height: 600px;
+        margin-top: 80px;
+        margin-bottom: 50px;
+        align-self: center;
+        img{
+            grid-area: img;
+            width: 100%;
+            height: 100%;
+            padding: 5px 80px 5px 5px;
+        }
+        p{
+            grid-area: parraf;
+            display: block;
+            padding: 5px;
+            font-family: 'Source Serif Pro', serif;
+            font-size: 24px;;
+            text-align: justify;
+        }
+        a{
+            grid-area: btn;
+            width: 170px;
+            height: 40px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #735B46;
+            background-color: #F2E7DC;
+            border-radius: 7px;
+            padding: 7px;
+            justify-self: center;
+            text-align: center;
+            align-self: flex-end;
+            margin-bottom: 5px;
+        }
+    }
+    .card2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 80px;
+        grid-template-areas: "parraf img"
+                             "parraf img"
+                             "btn    img";
+        width: 1500px;
+        height: 600px;
+        margin-top: 80px;
+        margin-bottom: 50px;
+        img{
+            grid-area: img;
+            width: 100%;
+            height: 100%;
+            padding: 5px 5px 5px 55px;
+        }
+        p{
+            grid-area: parraf;
+            display: block;
+            padding: 5px;
+            font-family: 'Source Serif Pro', serif;
+            font-size: 24px;;
+            text-align: justify;
+        }
+        a{
+            grid-area: btn;
+            display: block;
+            width: 170px;
+            height: 40px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #735B46;
+            background-color: #F2E7DC;
+            border-radius: 7px;
+            padding: 7px;
+            justify-self: center;
+            text-align: center;
+            align-self: center;
+            margin-bottom: 5px;
+        }
+    }
+}

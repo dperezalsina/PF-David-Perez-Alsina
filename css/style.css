@@ -93,6 +93,118 @@ main {
   height: 100%;
 }
 
+.head {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  background-image: url(../img/estetica2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.head div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.head div h1 {
+  display: block;
+  width: 650px;
+  height: 80px;
+  color: white;
+  font-family: "Source Serif Pro", serif;
+  font-weight: 200;
+  font-size: 64px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards .card1 {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 1fr 1fr 80px;
+  grid-template-areas: "img parraf" "img parraf" "img btn";
+  width: 1500px;
+  height: 600px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  align-self: center;
+}
+.cards .card1 img {
+  grid-area: img;
+  width: 100%;
+  height: 100%;
+  padding: 5px 80px 5px 5px;
+}
+.cards .card1 p {
+  grid-area: parraf;
+  display: block;
+  padding: 5px;
+  font-family: "Source Serif Pro", serif;
+  font-size: 24px;
+  text-align: justify;
+}
+.cards .card1 a {
+  grid-area: btn;
+  width: 170px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #735B46;
+  background-color: #F2E7DC;
+  border-radius: 7px;
+  padding: 7px;
+  justify-self: center;
+  text-align: center;
+  align-self: flex-end;
+  margin-bottom: 5px;
+}
+.cards .card2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 80px;
+  grid-template-areas: "parraf img" "parraf img" "btn    img";
+  width: 1500px;
+  height: 600px;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+.cards .card2 img {
+  grid-area: img;
+  width: 100%;
+  height: 100%;
+  padding: 5px 5px 5px 55px;
+}
+.cards .card2 p {
+  grid-area: parraf;
+  display: block;
+  padding: 5px;
+  font-family: "Source Serif Pro", serif;
+  font-size: 24px;
+  text-align: justify;
+}
+.cards .card2 a {
+  grid-area: btn;
+  display: block;
+  width: 170px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #735B46;
+  background-color: #F2E7DC;
+  border-radius: 7px;
+  padding: 7px;
+  justify-self: center;
+  text-align: center;
+  align-self: center;
+  margin-bottom: 5px;
+}
+
 .headPages {
   width: 100%;
   height: 600px;

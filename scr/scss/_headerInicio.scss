@@ -1,0 +1,25 @@
+.head{
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    background-image: url(../img/estetica2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    div{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        h1{
+            display: block;
+            width: 650px;
+            height: 80px;
+            color: white;
+            font-family: 'Source Serif Pro', serif;
+            font-weight: 200;
+            font-size: 64px;
+            text-align: center;
+        }
+    }
+}

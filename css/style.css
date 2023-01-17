@@ -63,6 +63,42 @@
   display: block;
 }
 
+@media (max-width: 812px) {
+  .navbar > ul {
+    display: block;
+    position: fixed;
+    flex-direction: column;
+    background-color: #F2E7DC;
+    z-index: 100;
+    width: 225px;
+    height: 100vh;
+    left: -300px;
+    padding-top: 90px;
+    box-shadow: 6px 7px 15px 5px rgba(115, 91, 70, 0.52);
+    transition: 1s;
+  }
+  .navbar > .fa-bars {
+    display: block;
+    font-size: 52px;
+    color: #735B46;
+    padding: 35px 25px;
+  }
+  .navbar {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+  }
+  .navbar > .fa-bars:hover + ul {
+    left: 0px;
+  }
+  .navbar > ul:hover {
+    left: 0;
+  }
+  .head {
+    margin-top: 118px;
+  }
+}
 main {
   position: relative;
 }
@@ -101,6 +137,11 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (max-width: 860px) {
+  .head {
+    height: 200px;
+  }
+}
 .head div {
   display: flex;
   width: 100%;
@@ -118,6 +159,11 @@ main {
   font-size: 64px;
   text-align: center;
 }
+@media (max-width: 480px) {
+  .head div h1 {
+    font-size: 44px;
+  }
+}
 
 .cards {
   display: flex;
@@ -129,17 +175,37 @@ main {
   grid-template-columns: 0.5fr 1fr;
   grid-template-rows: 1fr 1fr 80px;
   grid-template-areas: "img parraf" "img parraf" "img btn";
-  width: 1500px;
   height: 600px;
-  margin-top: 80px;
-  margin-bottom: 50px;
-  align-self: center;
+  margin: 80px 20px 50px 20px;
+}
+@media (max-width: 860px) {
+  .cards .card1 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 80px;
+    grid-template-areas: "img img" "parraf parraf" "btn btn";
+    align-items: center;
+    height: auto;
+  }
+}
+@media (max-width: 460px) {
+  .cards .card1 {
+    margin: 15px;
+  }
 }
 .cards .card1 img {
   grid-area: img;
-  width: 100%;
+  width: 380px;
   height: 100%;
-  padding: 5px 80px 5px 5px;
+  padding: 5px 5px 5px 5px;
+  justify-self: center;
+}
+@media (max-width: 860px) {
+  .cards .card1 img {
+    width: 320px;
+    height: 450px;
+    justify-self: center;
+    margin: auto;
+  }
 }
 .cards .card1 p {
   grid-area: parraf;
@@ -148,6 +214,11 @@ main {
   font-family: "Source Serif Pro", serif;
   font-size: 24px;
   text-align: justify;
+}
+@media (max-width: 1290px) {
+  .cards .card1 p {
+    font-size: 16px;
+  }
 }
 .cards .card1 a {
   grid-area: btn;
@@ -164,21 +235,44 @@ main {
   align-self: flex-end;
   margin-bottom: 5px;
 }
+@media (max-width: 860px) {
+  .cards .card1 a {
+    width: 320px;
+  }
+}
 .cards .card2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.5fr;
   grid-template-rows: 1fr 1fr 80px;
   grid-template-areas: "parraf img" "parraf img" "btn    img";
-  width: 1500px;
-  height: 600px;
-  margin-top: 80px;
-  margin-bottom: 50px;
+  height: 500px;
+  margin: 80px 20px 50px 20px;
+}
+@media (max-width: 860px) {
+  .cards .card2 {
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr 1fr 80px;
+    grid-template-areas: "img img" "parraf parraf" "btn btn";
+    align-items: center;
+    height: auto;
+  }
 }
 .cards .card2 img {
+  justify-self: end;
   grid-area: img;
-  width: 100%;
+  width: 450px;
   height: 100%;
   padding: 5px 5px 5px 55px;
+}
+@media (max-width: 860px) {
+  .cards .card2 img {
+    width: 320px;
+    height: 450px;
+    justify-self: center;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 5px;
+  }
 }
 .cards .card2 p {
   grid-area: parraf;
@@ -187,6 +281,11 @@ main {
   font-family: "Source Serif Pro", serif;
   font-size: 24px;
   text-align: justify;
+}
+@media (max-width: 1290px) {
+  .cards .card2 p {
+    font-size: 16px;
+  }
 }
 .cards .card2 a {
   grid-area: btn;
@@ -203,6 +302,11 @@ main {
   text-align: center;
   align-self: center;
   margin-bottom: 5px;
+}
+@media (max-width: 860px) {
+  .cards .card2 a {
+    width: 320px;
+  }
 }
 
 .headPages {
@@ -591,20 +695,21 @@ main {
 .foot {
   background-color: #6F7370;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 120px;
-  position: relative;
+}
+.foot section {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
 }
 .foot section .sub1 {
-  position: absolute;
-  left: 350px;
   list-style: none;
   padding: 10px;
 }
 .foot section .sub2 {
-  position: absolute;
   list-style: none;
-  right: 800px;
   padding: 10px;
 }
 .foot section ul li a {
@@ -616,12 +721,19 @@ main {
   color: white;
 }
 .foot div {
-  position: absolute;
-  right: 160px;
   padding: 35px;
 }
 .foot div img {
   width: 50px;
   height: 50px;
   margin-left: 30px;
+}
+
+@media (max-width: 812px) {
+  .foot > section {
+    display: none;
+  }
+  .foot {
+    justify-content: center;
+  }
 }/*# sourceMappingURL=style.css.map */

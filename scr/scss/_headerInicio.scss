@@ -5,6 +5,9 @@
     background-image: url(../img/estetica2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    @media(max-width:860px){
+        height: 200px;
+    }
     div{
         display: flex;
         width: 100%;
@@ -20,6 +23,9 @@
             font-weight: 200;
             font-size: 64px;
             text-align: center;
+            @media(max-width:480px){
+                font-size: 44px;
+            }
         }
     }
 }

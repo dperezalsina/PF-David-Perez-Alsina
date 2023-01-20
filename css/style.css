@@ -111,6 +111,30 @@ main {
   z-index: -1;
 }
 
+.cards .card2 p, .cards .card1 p {
+  grid-area: parraf;
+  display: block;
+  padding: 5px;
+  font-family: "Source Serif Pro", serif;
+  font-size: 24px;
+  text-align: justify;
+}
+
+.cards .card2 a, .cards .card1 a {
+  grid-area: btn;
+  width: 170px;
+  height: 40px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #735B46;
+  background-color: #F2E7DC;
+  border-radius: 7px;
+  padding: 7px;
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
 .titles {
   display: block;
   position: absolute;
@@ -196,7 +220,7 @@ main {
   grid-area: img;
   width: 380px;
   height: 100%;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
   justify-self: center;
 }
 @media (max-width: 860px) {
@@ -207,33 +231,13 @@ main {
     margin: auto;
   }
 }
-.cards .card1 p {
-  grid-area: parraf;
-  display: block;
-  padding: 5px;
-  font-family: "Source Serif Pro", serif;
-  font-size: 24px;
-  text-align: justify;
-}
 @media (max-width: 1290px) {
   .cards .card1 p {
     font-size: 16px;
   }
 }
 .cards .card1 a {
-  grid-area: btn;
-  width: 170px;
-  height: 40px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #735B46;
-  background-color: #F2E7DC;
-  border-radius: 7px;
-  padding: 7px;
-  justify-self: center;
-  text-align: center;
   align-self: flex-end;
-  margin-bottom: 5px;
 }
 @media (max-width: 860px) {
   .cards .card1 a {
@@ -258,11 +262,11 @@ main {
   }
 }
 .cards .card2 img {
-  justify-self: end;
   grid-area: img;
-  width: 450px;
+  width: 480px;
   height: 100%;
   padding: 5px 5px 5px 55px;
+  justify-self: center;
 }
 @media (max-width: 860px) {
   .cards .card2 img {
@@ -274,34 +278,13 @@ main {
     padding: 5px;
   }
 }
-.cards .card2 p {
-  grid-area: parraf;
-  display: block;
-  padding: 5px;
-  font-family: "Source Serif Pro", serif;
-  font-size: 24px;
-  text-align: justify;
-}
 @media (max-width: 1290px) {
   .cards .card2 p {
     font-size: 16px;
   }
 }
 .cards .card2 a {
-  grid-area: btn;
-  display: block;
-  width: 170px;
-  height: 40px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #735B46;
-  background-color: #F2E7DC;
-  border-radius: 7px;
-  padding: 7px;
-  justify-self: center;
-  text-align: center;
   align-self: center;
-  margin-bottom: 5px;
 }
 @media (max-width: 860px) {
   .cards .card2 a {
@@ -558,15 +541,15 @@ main {
 }
 
 .headVacum__fondo {
-  background-image: url(../img/vacumterapia1.jpg);
+  background-image: url(../../img/vacumterapia1.jpg);
 }
 
 .headOndas__fondo {
-  background-image: url(../img/ondasRusas.jpg);
+  background-image: url(../../img/ondasRusas.jpg);
 }
 
 .headMasaj__fondo {
-  background-image: url(../img/masajes.jpg);
+  background-image: url(../../img/masajes.jpg);
 }
 
 .masajAbdomen {
@@ -675,7 +658,7 @@ main {
 }
 
 .turn__vacum__title {
-  background-image: url(../img/vacumTurn.jpg);
+  background-image: url(../../img/vacumTurn.jpg);
 }
 
 .turn {

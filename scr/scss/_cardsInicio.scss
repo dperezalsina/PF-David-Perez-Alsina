@@ -26,11 +26,7 @@
         }
 
         img{
-            grid-area: img;
-            width: 380px;
-            height: 100%;
-            padding: 5px 5px 5px 5px;
-            justify-self: center;
+            @include imagenCard(380px,5px);
             @media(max-width:860px){
                 width: 320px;
                 height: 450px;
@@ -39,30 +35,14 @@
             }
         }
         p{
-            grid-area: parraf;
-            display: block;
-            padding: 5px;
-            font-family: 'Source Serif Pro', serif;
-            font-size: 24px;;
-            text-align: justify;
+            @extend %parrafo;
             @media(max-width:1290px){
                 font-size: 16px;
             } 
         }
         a{
-            grid-area: btn;
-            width: 170px;
-            height: 40px;
-            text-decoration: none;
-            font-size: 20px;
-            color: #735B46;
-            background-color: #F2E7DC;
-            border-radius: 7px;
-            padding: 7px;
-            justify-self: center;
-            text-align: center;
+            @extend %boton;
             align-self: flex-end;
-            margin-bottom: 5px;
             @media(max-width:860px){
                 width: 320px;
             }
@@ -87,11 +67,7 @@
             height: auto;                     
         }
         img{
-            justify-self: end;
-            grid-area: img;
-            width: 450px;
-            height: 100%;
-            padding: 5px 5px 5px 55px;
+            @include imagenCard(480px, 5px 5px 5px 55px);
             @media(max-width:860px){
                 width: 320px;
                 height: 450px;
@@ -102,31 +78,14 @@
             }
         }
         p{
-            grid-area: parraf;
-            display: block;
-            padding: 5px;
-            font-family: 'Source Serif Pro', serif;
-            font-size: 24px;;
-            text-align: justify;
+            @extend %parrafo;
             @media(max-width:1290px){
                 font-size: 16px;
             }
         }
         a{
-            grid-area: btn;
-            display: block;
-            width: 170px;
-            height: 40px;
-            text-decoration: none;
-            font-size: 20px;
-            color: #735B46;
-            background-color: #F2E7DC;
-            border-radius: 7px;
-            padding: 7px;
-            justify-self: center;
-            text-align: center;
+            @extend %boton;
             align-self: center;
-            margin-bottom: 5px;
             @media(max-width:860px){
                 width: 320px;
             }

@@ -541,15 +541,15 @@ main {
 }
 
 .headVacum__fondo {
-  background-image: url(../../img/vacumterapia1.jpg);
+  background-image: url(../img/vacumterapia1.jpg);
 }
 
 .headOndas__fondo {
-  background-image: url(../../img/ondasRusas.jpg);
+  background-image: url(../img/ondasRusas.jpg);
 }
 
 .headMasaj__fondo {
-  background-image: url(../../img/masajes.jpg);
+  background-image: url(../img/masajes.jpg);
 }
 
 .masajAbdomen {

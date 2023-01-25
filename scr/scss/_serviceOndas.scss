@@ -22,12 +22,11 @@
         }
     }
     div{
-        width: 90vw;
+        width: 100vw;
         height: 100%;
         display: flex;
         margin: auto;
         margin-bottom: 40px;
-        
         ul{
             list-style-position: inside;
             font-family: 'Source Serif Pro', serif;
@@ -35,7 +34,6 @@
             li{
                 padding: 10px;
             }
-            
         }
         .list1{
             width: 40%;

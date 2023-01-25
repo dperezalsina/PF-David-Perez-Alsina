@@ -504,7 +504,7 @@ main {
   }
 }
 .serviceOndas div {
-  width: 90vw;
+  width: 100vw;
   height: 100%;
   display: flex;
   margin: auto;
@@ -554,7 +554,6 @@ main {
 
 .masajAbdomen {
   position: relative;
-  width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;
@@ -571,7 +570,7 @@ main {
   font-family: "Source Serif Pro", serif;
   font-size: 30px;
   text-align: center;
-  margin: 20px;
+  margin: 20px 0 20px 0;
 }
 @media (max-width: 812px) {
   .masajAbdomen h3 {

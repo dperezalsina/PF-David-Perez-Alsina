@@ -19,8 +19,8 @@
   order: 1 !important;
   -webkit-animation-name: spread;
           animation-name: spread;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 .navbar > .fa-bars {
   display: none;
@@ -121,9 +121,6 @@
   0% {
     opacity: 0;
   }
-  50% {
-    opacity: 0.5;
-  }
   100% {
     opacity: 1;
   }
@@ -131,9 +128,6 @@
 @keyframes spread {
   0% {
     opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
   }
   100% {
     opacity: 1;

@@ -10,7 +10,7 @@
         margin-left: 60px;
         order: 1 !important;
         animation-name: spread;
-        animation-duration: 1s;
+        animation-duration: 3s;
     }
     > .fa-bars{
         display: none;
@@ -121,9 +121,6 @@
     0%{
         opacity: 0;
     }
-    50%{
-        opacity: 0.5;
-    }    
     100%{
         opacity: 1;
     }

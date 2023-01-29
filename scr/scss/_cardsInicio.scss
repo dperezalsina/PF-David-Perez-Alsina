@@ -27,7 +27,6 @@
 
         img{
             @include imagenCard(380px,5px);
-
             @media(max-width:860px){
                 width: 320px;
                 height: 450px;

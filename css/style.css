@@ -7,6 +7,7 @@
 
 .navbar {
   position: relative;
+  height: 119px;
   display: flex;
   background-color: #F2E7DC;
   justify-content: space-between;
@@ -16,6 +17,10 @@
   height: 119px;
   margin-left: 60px;
   order: 1 !important;
+  -webkit-animation-name: spread;
+          animation-name: spread;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 .navbar > .fa-bars {
   display: none;
@@ -70,12 +75,17 @@
     flex-direction: column;
     background-color: #F2E7DC;
     z-index: 100;
-    width: 225px;
+    width: 175px;
     height: 100vh;
-    left: -300px;
+    left: -500px;
     padding-top: 90px;
     box-shadow: 6px 7px 15px 5px rgba(115, 91, 70, 0.52);
     transition: 1s;
+  }
+  .navbar > ul > li > ul {
+    left: 100%;
+    top: -48px;
+    box-shadow: 6px 6px 5px 7px rgba(115, 91, 70, 0.52);
   }
   .navbar > .fa-bars {
     display: block;
@@ -97,6 +107,36 @@
   }
   .head {
     margin-top: 118px;
+  }
+}
+@media (max-width: 450px) {
+  .navbar > ul {
+    width: 50vw;
+  }
+  .navbar > ul > li > ul {
+    width: 50vw;
+  }
+}
+@-webkit-keyframes spread {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes spread {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 main {
@@ -554,7 +594,8 @@ main {
 
 .masajAbdomen {
   position: relative;
-  height: 400px;
+  width: 90vw;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
@@ -579,33 +620,27 @@ main {
 }
 .masajAbdomen section {
   width: 100%;
-  height: 300px;
+  height: 400px;
   padding: 5px;
   display: flex;
   justify-content: space-evenly;
 }
 .masajAbdomen section div {
-  width: 660px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 5px;
 }
 @media (max-width: 1320px) {
   .masajAbdomen section div {
-    width: 60vw;
     padding: 15px;
   }
 }
 .masajAbdomen section div ol {
-  height: 100px;
+  height: 100%;
   list-style-position: inside;
   text-align: justify;
   margin-bottom: 10px;
-}
-@media (max-width: 812px) {
-  .masajAbdomen section div ol {
-    height: 90vh;
-  }
 }
 .masajAbdomen section div ol li {
   padding: 10px;
@@ -621,7 +656,7 @@ main {
 }
 @media (max-width: 1320px) {
   .masajAbdomen section div img {
-    width: 60vw;
+    width: 100%;
   }
 }
 @media (max-width: 812px) {

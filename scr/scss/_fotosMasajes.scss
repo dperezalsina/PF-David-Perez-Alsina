@@ -1,6 +1,7 @@
 .masajAbdomen{
     position: relative;
-    height: 400px;
+    width: 90vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
@@ -20,27 +21,23 @@
     }
     section{
         width: 100%;
-        height: 300px;
+        height: 400px;
         padding: 5px;
         display: flex;
         justify-content: space-evenly;
         div{
-            width: 660px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             padding: 5px;
             @media(max-width:1320px){
-                width: 60vw;
                 padding: 15px;
             }
             ol{
-                height: 100px;
+                height: 100%;
                 list-style-position: inside;
                 text-align: justify;
                 margin-bottom: 10px;
-                @media(max-width:812px){
-                    height: 90vh;
-                }
                 li{
                     padding: 10px;
                     ul{
@@ -54,7 +51,7 @@
             width: 650px;
             height: 190px;
             @media(max-width: 1320px){
-                width: 60vw;
+                width: 100%;
             }
         }
         }

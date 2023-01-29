@@ -1,5 +1,6 @@
 .navbar{
     position: relative;
+    height: 119px;
     display: flex;
     background-color: #F2E7DC;
     justify-content: space-between;
@@ -8,6 +9,8 @@
         height: 119px;
         margin-left: 60px;
         order: 1 !important;
+        animation-name: spread;
+        animation-duration: 1s;
     }
     > .fa-bars{
         display: none;
@@ -61,19 +64,25 @@
     }
 }
 @media(max-width:812px){
-    .navbar > ul{
-        display: block;
-        position: fixed;
-        flex-direction:  column;
-        background-color: #F2E7DC;
-        z-index: 100;
-        width: 225px;
-        height: 100vh;
-        left: -300px;
-        padding-top: 90px;
-        box-shadow: 6px 7px 15px 5px rgba(115,91,70,0.52);
-        transition: 1s;
-    }
+    .navbar 
+        > ul{
+            display: block;
+            position: fixed;
+            flex-direction:  column;
+            background-color: #F2E7DC;
+            z-index: 100;
+            width: 175px;
+            height: 100vh;
+            left: -500px;
+            padding-top: 90px;
+            box-shadow: 6px 7px 15px 5px rgba(115,91,70,0.52);
+            transition: 1s;
+            > li > ul{
+                left: 100%;
+                top: -48px;
+                box-shadow: 6px 6px 5px 7px rgba(115,91,70,0.52);
+            }
+        }
     .navbar > .fa-bars{
         display: block;
         font-size: 52px;
@@ -97,4 +106,27 @@
         margin-top: 118px;
     }
 }
+
+@media (max-width:450px){
+    .navbar > ul{
+            width: 50vw;
+            > li > ul{
+            width: 50vw;
+            }
+    }
+
+}
+
+@keyframes spread{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }    
+    100%{
+        opacity: 1;
+    }
+}
+
 

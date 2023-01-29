@@ -1,7 +1,7 @@
-@mixin imagenCard($width,$padding){
+@mixin imagenCard($width,$padding,$justi){
     grid-area: img;
     width: $width;
     height: 100%;
     padding: $padding;
-    justify-self: center;
+    justify-self: $justi;
 }

@@ -4,6 +4,7 @@
     align-items: center;
     .card1{
         display: grid;
+        width: 85%;
         grid-template-columns: 0.5fr 1fr;
         grid-template-rows: 1fr 1fr 80px;
         grid-template-areas: "img parraf"
@@ -26,7 +27,7 @@
         }
 
         img{
-            @include imagenCard(380px,5px);
+            @include imagenCard(380px,5px,start);
             @media(max-width:860px){
                 width: 320px;
                 height: 450px;
@@ -34,11 +35,17 @@
                 margin: auto;
             }
         }
-        p{
-            @extend %parrafo;
-            @media(max-width:1290px){
-                font-size: 16px;
+        div{
+            @media (max-width:860px){
+                grid-area: parraf;
             } 
+            p{
+                @extend %parrafo;
+                @media(max-width:1290px){
+                font-size: 16px;
+                }
+                padding: 20px
+            }
         }
         a{
             @extend %boton;
@@ -50,6 +57,7 @@
     }
     .card2{
         display: grid;
+        width: 85%;
         grid-template-columns: 1fr 0.5fr;
         grid-template-rows: 1fr 1fr 80px;
         grid-template-areas: "parraf img"
@@ -57,6 +65,9 @@
                              "btn    img";
         height: 500px;
         margin: 80px 20px 50px 20px;
+        @media (max-width:1130px){
+            height: auto;
+        }
         @media(max-width:860px){
             grid-template-columns: 0.5fr 1fr;
             grid-template-rows: 1fr 1fr 80px;
@@ -67,7 +78,10 @@
             height: auto;                     
         }
         img{
-            @include imagenCard(480px, 5px 5px 5px 55px);
+            @include imagenCard(480px, 5px 5px 5px 55px,end);
+            @media (max-width:1130px){
+                height: 500px;
+            }
             @media(max-width:860px){
                 width: 320px;
                 height: 450px;
@@ -77,10 +91,14 @@
                 padding: 5px;
             }
         }
-        p{
-            @extend %parrafo;
-            @media(max-width:1290px){
+        div{
+            grid-area: parraf;
+            p{
+                @extend %parrafo;
+                @media(max-width:1290px){
                 font-size: 16px;
+                }
+                padding: 20px;
             }
         }
         a{

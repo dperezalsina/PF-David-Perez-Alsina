@@ -145,11 +145,12 @@ main {
   z-index: -1;
 }
 
-.cards .card2 p, .cards .card1 p {
+.cards .card2 div p, .cards .card1 div p {
   grid-area: parraf;
   display: block;
   padding: 5px;
   font-family: "Source Serif Pro", serif;
+  color: #735B46;
   font-size: 24px;
   text-align: justify;
 }
@@ -230,6 +231,7 @@ main {
 }
 .cards .card1 {
   display: grid;
+  width: 85%;
   grid-template-columns: 0.5fr 1fr;
   grid-template-rows: 1fr 1fr 80px;
   grid-template-areas: "img parraf" "img parraf" "img btn";
@@ -255,7 +257,7 @@ main {
   width: 380px;
   height: 100%;
   padding: 5px;
-  justify-self: center;
+  justify-self: start;
 }
 @media (max-width: 860px) {
   .cards .card1 img {
@@ -265,8 +267,16 @@ main {
     margin: auto;
   }
 }
+@media (max-width: 860px) {
+  .cards .card1 div {
+    grid-area: parraf;
+  }
+}
+.cards .card1 div p {
+  padding: 20px;
+}
 @media (max-width: 1290px) {
-  .cards .card1 p {
+  .cards .card1 div p {
     font-size: 16px;
   }
 }
@@ -280,11 +290,17 @@ main {
 }
 .cards .card2 {
   display: grid;
+  width: 85%;
   grid-template-columns: 1fr 0.5fr;
   grid-template-rows: 1fr 1fr 80px;
   grid-template-areas: "parraf img" "parraf img" "btn    img";
   height: 500px;
   margin: 80px 20px 50px 20px;
+}
+@media (max-width: 1130px) {
+  .cards .card2 {
+    height: auto;
+  }
 }
 @media (max-width: 860px) {
   .cards .card2 {
@@ -300,7 +316,12 @@ main {
   width: 480px;
   height: 100%;
   padding: 5px 5px 5px 55px;
-  justify-self: center;
+  justify-self: end;
+}
+@media (max-width: 1130px) {
+  .cards .card2 img {
+    height: 500px;
+  }
 }
 @media (max-width: 860px) {
   .cards .card2 img {
@@ -312,8 +333,14 @@ main {
     padding: 5px;
   }
 }
+.cards .card2 div {
+  grid-area: parraf;
+}
+.cards .card2 div p {
+  padding: 20px;
+}
 @media (max-width: 1290px) {
-  .cards .card2 p {
+  .cards .card2 div p {
     font-size: 16px;
   }
 }

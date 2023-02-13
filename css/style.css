@@ -17,10 +17,8 @@
   height: 119px;
   margin-left: 60px;
   order: 1 !important;
-  -webkit-animation-name: spread;
-          animation-name: spread;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  animation-name: spread;
+  animation-duration: 3s;
 }
 .navbar > .fa-bars {
   display: none;
@@ -115,14 +113,6 @@
   }
   .navbar > ul > li > ul {
     width: 50vw;
-  }
-}
-@-webkit-keyframes spread {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 @keyframes spread {

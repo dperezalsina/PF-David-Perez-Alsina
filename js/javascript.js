@@ -5,12 +5,15 @@ alert(`Bienvenido/a ${saludo}`)
 
 //Se solicita la altura y el peso para conocer el Indice de Masa Corporal(IMC)
 let altura = 0
+let peso = 0
 
 do{
     altura = prompt("Ingrese su la altura");
-}while ( altura === 'number')
+}while (isNaN(altura))
 
-let peso = Number(prompt("Ingrese su peso en kilogramos"))
+do{
+    peso = prompt("Ingrese su peso en kilogramos")
+}while (isNaN(peso))
 
 let IndiceMasaCorporal = peso / (altura ** 2)
 console.log(IndiceMasaCorporal)
@@ -24,22 +27,25 @@ let ondas = 750
 let masajes = 490
 
 //Dependiendo del IMC se recomienda la cantidad de servicios para optimizar resultados
-const recomendacion = (peso) =>{
-    alert(`Se le recomiendan ${peso} sesiones de Vacumterapia, ${peso} de Ondas rusas y ${peso} de Masajes descontracturantes`)
+const recomendacionSesiones = (peso) =>{
+    let precioVacum = vacum * peso
+    let precioOndas = ondas * peso
+    let precioMasajes = masajes * peso
+    alert(`Se recomiendan:\n${peso} sesiones de Vacumterapia ($${precioVacum})\n${peso} sesiones de Ondas rusas ($${precioOndas})\n${peso} sesiones de Masajes descontracturantes ($${precioMasajes})`)
 }
     
 
 if (IndiceMasaCorporal <= 18.5){
-    recomendacion (2)
+    recomendacionSesiones (2)
 }
 else if (IndiceMasaCorporal <= 24.9){
-    recomendacion (4)
+    recomendacionSesiones (4)
 }
 else if (IndiceMasaCorporal <= 29.9){
-    recomendacion (7)
+    recomendacionSesiones (7)
 }
 else{
-    recomendacion (10)
+    recomendacionSesiones (10)
 }
 
 //Se declaran variables para calcular el total de los servicios solicitados

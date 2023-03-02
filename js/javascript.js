@@ -48,33 +48,135 @@ else{
     recomendacionSesiones (10)
 }
 
-//Se declaran variables para calcular el total de los servicios solicitados
-let sesionesV = Number(prompt("Ingrese la cantidad de sesiones que desea realizar para Vacumterapia"))
+//Se crea una lista de servicios
 
-let sesionesO = Number(prompt("Ingrese la cantidad de sesiones que desea realizar para Ondas rusas"))
+class Servicio{
+    constructor(nombreServicio, precioServicio, diaServicio){
+        this.nombreServicio = nombreServicio;
+        this.precioServicio = precioServicio;
+        this.diaServicio = diaServicio;
+    }
 
-let sesionesM = Number(prompt("Ingrese la cantidad de sesiones que desea realizar para Masajes descontracturantes"))
-
-let subTotal = (vacum * sesionesV) + (ondas * sesionesO) + (masajes * sesionesM)
-
-alert(`Total de servicios es $${subTotal} `)
-
-//Dependiendo del dia que se elige se le aplica cierto porcentaje
-let dias = prompt("Indique que dias desea realizar las sesiones\nLunes, martes o miercoles (20% descuento)\nJueves o viernes (15% descuento)\nSabados (10% descuento)")
-
-if ((dias == "lunes") || (dias == "martes") || (dias == "miercoles")){
-    let total = subTotal * 0.8
-    alert(`El total a pagar es $${total}`)
+    get_datos(){
+        console.log("............")
+        console.log("Nombre del servicio:", this.nombreServicio);
+        console.log("Precio del servicio:", this.precioServicio);
+        console.log("Dia del servicio", this.diaServicio);
+        console.log("............")
+    }
 }
-else if ((dias == "jueves") || (dias == "viernes")){
-    total = subTotal * 0.85
-    alert(`El total a pagar es $${total}`)
+
+let lista_servicios = []
+
+lista_servicios.push( new Servicio("Vacumterapia", 500 , "lunes"));
+lista_servicios.push( new Servicio("Ondas rusas", 750 , "miercoles"));
+lista_servicios.push( new Servicio("Masajes", 490 , "viernes" ));
+
+
+
+console.log(lista_servicios);
+
+for ( let servicio of lista_servicios){
+    servicio.get_datos();
 }
-else if (dias == "sabados"){
-    total = subTotal * 0.9
-    alert(`El total a pagar es $${total}`)
+
+//Seleccion de servicio
+
+function busqueda_servicio(servicio){
+    return servicio.nombreServicio == seleccion_servicio
+}
+
+let seleccion_servicio = prompt("Ingrese servicio\nVacumterapia\nOndas rusas\nMasajes");
+
+let resultado_busqueda = lista_servicios.find( busqueda_servicio );
+
+while(resultado_busqueda == undefined){
+
+        alert("No se encontro el servicio")
+        seleccion_servicio = prompt("Ingrese nuevamente el servicio (respete las  mayusculas y minusculas)\nVacumterapia\nOndas rusas\nMasajes")
+        resultado_busqueda = lista_servicios.find( busqueda_servicio )
+}
+
+//Se evalua que servicio pidio el cliente
+
+let precio_servicio = 0
+
+if ( seleccion_servicio == "Vacumterapia"){
+    precio_servicio = vacum
+}
+else if ( seleccion_servicio == "Ondas rusas"){
+    precio_servicio = ondas
+}
+else if ( seleccion_servicio == "Masajes"){
+    precio_servicio = masajes
 }
 else{
-    alert(`"${dias}" no es un dia valido`)
+    console.log("Servicio incorrecto")
 }
+
+//Se calcula la cantidad de servicios que solicita el cliente
+
+let cantidad_servicio = 0
+
+do{
+    cantidad_servicio = prompt("Ingrese la cantidad de sesiones que desea realizar")
+}while(isNaN(cantidad_servicio))
+
+//Se solicita el dia para realizar la sesion del servicio
+
+function busqueda_servicio_dia (servicio){
+    return servicio.diaServicio == dias_servicio
+}
+
+let dias_servicio = prompt("Ingrese el dia a realizar el servicio\nlunes (20% de descuento)\nmiercoles (15% de descuento)\nviernes (10% de descuento)");
+
+let resultado_busqueda_dias = lista_servicios.find( busqueda_servicio_dia );
+
+while(resultado_busqueda_dias == undefined){
+
+    alert("El dia ingresado no posee servicios activos")
+    dias_servicio = prompt("Ingrese nuevamente el dia del servicio (respete las mayusculas y minusculas)\nlunes -- Vacumterapia\nmiercoles -- Ondas rusas\nviernes -- Masajes")
+    resultado_busqueda_dias = lista_servicios.find( busqueda_servicio_dia )
+}
+
+//Se calcula el porcentaje de descuento dependiendo del dia seleccionado
+
+let descuento_dia = 0
+
+if (dias_servicio == "lunes"){
+    descuento_dia = 0.8
+}
+else if (dias_servicio == "miercoles"){
+    descuento_dia = 0.85
+}
+else if (dias_servicio == "viernes"){
+    descuento_dia = 0.90
+}
+else{
+    console.log("Dia sin descuento")
+}
+
+//Se calcula el precio final
+
+let precio_final = 0
+
+function precio_total(servicio, cantidad, descuento){
+    precio_final = (servicio * cantidad) * descuento
+}
+
+precio_total(precio_servicio, cantidad_servicio, descuento_dia);
+
+alert(`El total a pagar es: $${precio_final}`)
+
+
+
+
+
+
+
+
+
+
+
+
 

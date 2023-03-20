@@ -147,7 +147,7 @@ main {
 #carrito_compras {
   display: none;
   position: fixed;
-  width: 20vw;
+  width: 400px;
   height: 100vh;
   border: solid 1px;
   background-color: #F2E7DC;

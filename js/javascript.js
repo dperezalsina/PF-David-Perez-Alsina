@@ -6,8 +6,6 @@ let mostrar_carrito = document.getElementById("icon_carrito")
 function mostrar_el_carrito(){
     let carrito_compras = document.getElementById("carrito_compras");
 
-    // carrito_compras = "block"
-
     if (carrito_compras.style.display == "block"){
         carrito_compras.style.display = "none"
     }
@@ -21,8 +19,6 @@ function mostrar_el_carrito(){
 icon_carrito.addEventListener("click", mostrar_el_carrito )
 
 
-
-//Se solicita la altura y el peso para conocer el Indice de Masa Corporal(IMC)
 let altura = 0
 
 let peso = 0
@@ -141,7 +137,7 @@ function agregarCarrito(){
 
     let producto = {
         servicio: nmbServicio,
-        dia_servicio: diaServicio,
+        dia: diaServicio,
         cantidad: cantidad_comprar,
     }
 
@@ -154,10 +150,89 @@ function agregarCarrito(){
     console.log(carrito);
  }
 
+let vacum = 500
+
+let ondas = 750
+
+let masajes = 490
 
 let btnAgregarCarrito = document.getElementById("btnAgregarCarrito");
 
 btnAgregarCarrito.addEventListener ( "click" , agregarCarrito );
+
+function randerizar_carrito(){
+    
+    let tabla_body = document.getElementById("tabla_body");
+
+    tabla_body.innerHTML = ""
+
+    let precio = 0
+
+    
+
+    for ( let producto of carrito){
+        let fila = document.createElement("tr");
+
+        switch(producto.servicio){
+            case "vacumterapia":
+                precio = vacum;
+                break
+            
+            case "ondas rusas":
+                precio = ondas;
+                break
+            
+            default:
+                precio = masajes;
+                break
+        }
+
+        fila.innerHTML = `<td><h4>${producto.servicio}</h4></td>
+                          <td><p>${producto.dia}</p></td>   
+                          <td><p>${producto.cantidad}</p></td>
+                          <td><p>$${precio}</p></td>
+                          <i class="fa-solid fa-xmark btn_borrar"  style="color: #ff0000;"></i>
+                         `
+        fila.style.textAlign = `center`
+        tabla_body.append(fila)
+    }
+
+    let btn_borrar = document.querySelectorAll(".btn_borrar");
+
+    function borrar_producto(e){
+        console.log(e.target)
+
+        let nombre_servicio = e.target.parentNode;
+
+        nombre_servicio.remove();
+
+        let producto_eliminar = nombre_servicio.querySelector("h4").textContent;
+        
+        console.log(producto_eliminar)
+
+        let carrito_json = JSON.parse(localStorage.getItem("carrito_local"));
+    
+        function filtro_producto (nommbre){
+            
+            return nommbre.servicio != producto_eliminar;
+        }
+        
+        let carrito_filtrado = carrito_json.filter( filtro_producto )
+
+        carrito = carrito_filtrado
+
+    }
+    
+
+    for ( boton of btn_borrar){
+
+        boton.addEventListener("click", borrar_producto)
+    }
+}
+
+btnAgregarCarrito.addEventListener ( "click", randerizar_carrito);
+
+
 
 
 
@@ -166,11 +241,7 @@ btnAgregarCarrito.addEventListener ( "click" , agregarCarrito );
 
 //Se declaran las variables para el precio de los servicios
 
-// let vacum = 500
 
-// let ondas = 750
-
-// let masajes = 490
 
     
 //Se crea una lista de servicios

@@ -160,6 +160,19 @@ let btnAgregarCarrito = document.getElementById("btnAgregarCarrito");
 
 btnAgregarCarrito.addEventListener ( "click" , agregarCarrito );
 
+
+function mostrarCarrito(){
+
+    let carrito_compras = document.getElementById("carrito_compras");
+
+    if (carrito_compras.style.display != "block"){
+        carrito_compras.style.display = "block"
+    }
+  
+}
+
+btnAgregarCarrito.addEventListener ("click", mostrarCarrito)
+
 function randerizar_carrito(){
     
     let tabla_body = document.getElementById("tabla_body");

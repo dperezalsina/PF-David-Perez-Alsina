@@ -9,11 +9,13 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
     <nav class="navbar">
         <i class="fa-solid fa-bars"></i>
+        <i class="fa-sharp fa-solid fa-cart-shopping " id="icon_carrito"></i>
         <ul>
             <li><a href="./index.html">Inicio</a></li>
             <li>
@@ -33,14 +35,68 @@
         <div>
             <h1>Estetica corporal</h1>
         </div>
+        <div id="carrito_compras">
+            <h3>Carrito de compras</h3>
+            <table>
+                <th>Servicio</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </table>
+        </div>
     </header>
     <main>
         <img class="fondo" src="./img/LOGO.png" alt="logoFondo">
-        <div>
-            <h3>LISTA DE SERVICIOS</h3>
-            <ul class="listaServicios">
-            </ul>
-        </div>
+        <section class="sectionServicios">
+            <div id="inicioLista">
+                <h2>Bienvenido</h2>
+                <div>
+                    <label>Ingrese su altura:
+                        <input type="number" id="inputAltura">
+                    </label>
+                </div>
+                <div>
+                    <label>Ingrese su peso:
+                        <input type="number" id="inputPeso">
+                    </label>
+                </div>
+                <button id="botonEnviar">Enviar</button>
+            </div>
+            <div id="recomendacionesSesiones">
+                <p id="parrafoImc">Su indice de masa  corporal  es:</p>
+                <p id="parrafoSesiones">Se recomiendan las siguientes sesiones:</p>
+                <button id="botonContinuar">Continuar</button>
+                <button id="botonAtras">Atras</button>
+            </div>
+            <div id="listService">
+                <h3>LISTA DE SERVICIOS</h3>
+                <div>
+                    <div>
+                        <p>Seleccione el servicio, el dia y la cantidad de sesiones que desea realizar</p>
+                    </div>
+                    <div id="div_inputs">
+                        <div>
+                            <h4>Servicio</h4>
+                            <input type="radio" name="servicio" value="vacumterapia" id="vacum" checked><label for="vacum">Vacumterapia</label>
+                            <br>
+                            <input type="radio" name="servicio" value="ondas_rusas" id="ondas"><label for="ondas_rusas">Ondas rusas</label>
+                            <br>
+                            <input type="radio" name="servicio" value="masajes" id="masaj"><label for="masaj">Masajes</label>
+                        </div>
+                        <div>
+                            <h4>Dia</h4>
+                            <input type="radio" name="dia" value="lunes" checked id="dia_lunes"><label for="dia_lunes">Lunes (20% descuento)</label>
+                            <br>
+                            <input type="radio" name="dia" value="miercoles" id="dia_miercoles"><label for="dia_miercoles">Miercoles (15% descuento)</label>
+                            <br>
+                            <input type="radio" name="dia" value="viernes" id="dia_viernes"><label for="dia_viernes">Viernes (10% descuento)</label>
+                        </div>
+                        <input type="text" name="cantidad" id="cantidad_comprar"><label for="cantidad_comprar">Ingrese cantidad de sesiones</label>
+                    </div>    
+                </div>
+                <button id="btnAgregarCarrito">Agregar al carrito</button>
+                <button id="btnAtras">Atras</button>
+            </div>
+        </section>
         <section class="cards">
             <div class="card1">
                 <img src="./img/fotoPerfil (2).png" alt="fotoPerfil">
@@ -48,7 +104,7 @@
                     <p>Hola mi nombre es Adriana Gisela Boehm, tu nueva compañera en este camino que elegiste hacia un mejor bienestar.</p> 
                     <p>Soy esteticista corporal recibida en la Escuela de Estética Corporal PRODERMIC ubicada en San Miguel, Buenos Aires.</p>
                     <p>En el transcurso de mi capacitación me desarrollé en: <strong> masajes descontracturantes, tratamiento de ondas rusas, vacumterapia, exfoliación corporal, tratamientos de cuidado de la piel y tratamientos reductores.</strong></p> 
-                    <p>Te invito a informarte sobre los beneficios de los diferentes tratamientos que tengo para vs y disfrutar de esta experiencia saludable para tu cuerpo.</p>
+                    <p>Te invito a informarte sobre los beneficios de los diferentes tratamientos que tengo para vos y disfrutar de esta experiencia saludable para tu cuerpo.</p>
                 </div>    
                 <a href="./pages/contacto.html">Enviar mensaje</a>
             </div>
@@ -83,6 +139,7 @@
             <img src="./img/whats.png" alt="whatsapp">
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/javascript.js"></script>
 </body>
 </html>

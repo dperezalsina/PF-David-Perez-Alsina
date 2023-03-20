@@ -1,0 +1,32 @@
+#icon_carrito{
+    position: absolute;
+    font-size: 45px;
+    order: 2;
+    margin: 37px;
+    left: 14%;
+    color: #735B46;
+}
+
+#carrito_compras{
+    display: none;
+    position: fixed;
+    width: 20vw;
+    height: 100vh;
+    border: solid 1px;
+    background-color: #F2E7DC;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    color: #735B46;
+    h3{
+        font-size: 32px;
+        text-align: center;
+        margin: 8px;
+        border: solid 1px #735B46;
+    }
+    table{
+        font-size: 22px;
+        width: 100%;
+        border-bottom: #735B46 solid 1px;
+    }
+}

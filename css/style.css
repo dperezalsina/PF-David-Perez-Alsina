@@ -135,6 +135,39 @@ main {
   z-index: -1;
 }
 
+#icon_carrito {
+  position: absolute;
+  font-size: 45px;
+  order: 2;
+  margin: 37px;
+  left: 14%;
+  color: #735B46;
+}
+
+#carrito_compras {
+  display: none;
+  position: fixed;
+  width: 20vw;
+  height: 100vh;
+  border: solid 1px;
+  background-color: #F2E7DC;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  color: #735B46;
+}
+#carrito_compras h3 {
+  font-size: 32px;
+  text-align: center;
+  margin: 8px;
+  border: solid 1px #735B46;
+}
+#carrito_compras table {
+  font-size: 22px;
+  width: 100%;
+  border-bottom: #735B46 solid 1px;
+}
+
 .cards .card2 div p, .cards .card1 div p {
   grid-area: parraf;
   display: block;
@@ -160,23 +193,67 @@ main {
   margin-bottom: 5px;
 }
 
-div > h3 {
+.sectionServicios {
+  border: solid 2px #735B46;
+  border-radius: 10px;
+  width: 80vw;
+  height: auto;
+  justify-content: center;
+  margin: 20px auto 20px auto;
+}
+.sectionServicios #inicioLista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionServicios #inicioLista h2 {
+  display: block;
+  width: 250px;
+  text-align: center;
+}
+.sectionServicios #inicioLista div {
+  width: 400px;
+  justify-content: center;
+}
+.sectionServicios #inicioLista button {
+  margin: 10px;
+  width: 150px;
+  height: 20px;
+}
+.sectionServicios #recomendacionesSesiones {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionServicios #recomendacionesSesiones button {
+  margin: 6px;
+  width: 150px;
+  height: 20px;
+}
+.sectionServicios #listService {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.sectionServicios #listService h3 {
   display: block;
   width: 450px;
   font-size: 32px;
-  border-radius: 10px;
   padding: 10px;
-  margin: 20px;
-  border-style: solid;
+  margin: 6px;
   text-align: center;
   color: #735B46;
 }
-
-.lista_servicios {
-  color: #735B46;
-  font-size: 20px;
-  padding: 10px;
-  margin: 20px;
+.sectionServicios #listService #div_inputs > div {
+  margin: 6px;
+}
+.sectionServicios #listService #cantidad_comprar {
+  margin: 8px;
+}
+.sectionServicios #listService > button {
+  margin: 6px;
+  width: 150px;
+  height: 20px;
 }
 
 .titles {

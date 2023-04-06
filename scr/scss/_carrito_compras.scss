@@ -5,6 +5,7 @@
     margin: 37px;
     left: 14%;
     color: #735B46;
+    
 }
 
 #carrito_compras{
@@ -28,5 +29,27 @@
         font-size: 22px;
         width: 100%;
         border-bottom: #735B46 solid 1px;
+    }
+    .precio_final{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        border: solid 3px #735B46;
+        position: absolute;
+        display: flex;
+        bottom: 0px;
+        > p{
+            padding: 10px;
+            font-size: 42px;
+            display: block;
+        }
+        > button{
+            font-size: 28px;
+
+ 
+            margin: 10px;
+            display: block;
+        }
     }
 }

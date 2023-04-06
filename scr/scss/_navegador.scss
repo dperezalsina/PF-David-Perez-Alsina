@@ -14,12 +14,25 @@
     }
     > .fa-bars{
         display: none;
+        order: 2 !important;
+    }
+    #clima{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 550px;
+        height: 100%;
+        align-self: center;
+        order: 3 !important;
+        font-size: 20px;
+        color: #735B46;
+        padding: 15px;
     }
     > ul{
         height: 100%;
         display: flex;
         list-style: none;
-        order: 3 !important;
+        order: 4 !important;
         > li{
             position: relative;
             > a{
@@ -126,4 +139,7 @@
     }
 }
 
+.parrafo_agregado{
+    margin: 10px;
+}
 

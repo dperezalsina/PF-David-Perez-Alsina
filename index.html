@@ -30,6 +30,8 @@
             <li><a href="./pages/contacto.html">Contacto</a></li>
         </ul>
         <img src="./img/LOGO.png" alt="logo">
+        <div id="clima">
+        </div>
     </nav>
     <header class="head">
         <div>
@@ -48,6 +50,10 @@
                 <tbody id="tabla_body">
                 </tbody>
             </table>
+            <div class="precio_final">
+                <p id="precio_total">Precio total: $</p>
+                <button id="comprar_productos">Comprar productos</button>
+            </div>
         </div>
     </header>
     <main>
@@ -56,12 +62,12 @@
             <div id="inicioLista">
                 <h2>Bienvenido</h2>
                 <div>
-                    <label>Ingrese su altura:
+                    <label>Ingrese su altura (en metros):
                         <input type="number" id="inputAltura">
                     </label>
                 </div>
                 <div>
-                    <label>Ingrese su peso:
+                    <label>Ingrese su peso (en kg):
                         <input type="number" id="inputPeso">
                     </label>
                 </div>
@@ -96,13 +102,12 @@
                             <br>
                             <input type="radio" name="dia" value="viernes" id="dia_viernes"><label for="dia_viernes">Viernes (10% descuento)</label>
                         </div>
-                        <input type="text" name="cantidad" id="cantidad_comprar"><label for="cantidad_comprar">Ingrese cantidad de sesiones</label>
+                        <input type="text" name="cantidad" value="1" min="1" id="cantidad_comprar"><label for="cantidad_comprar">Ingrese cantidad de sesiones</label>
                     </div>    
                 </div>
                 <button id="btnAgregarCarrito">Agregar al carrito</button>
                 <button id="btnAtras">Atras</button>
             </div>
-
         </section>
         <section class="cards">
             <div class="card1">
@@ -150,3 +155,4 @@
     <script src="./js/javascript.js"></script>
 </body>
 </html>
+

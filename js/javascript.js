@@ -1,6 +1,21 @@
 
 let carrito = [];
 
+let carrito_en_local = JSON.parse(localStorage.getItem("carrito_local"))
+
+if(carrito_en_local != null){
+    carrito = carrito_en_local;
+}
+else{
+    let carrito_1 = JSON.stringify(carrito);
+
+    localStorage.setItem("carrito_local", carrito_1);
+
+}
+
+
+
+
 let mostrar_carrito = document.getElementById("icon_carrito")
 
 function mostrar_el_carrito(){
@@ -16,7 +31,9 @@ function mostrar_el_carrito(){
 
 }
 
-icon_carrito.addEventListener("click", mostrar_el_carrito )
+icon_carrito.addEventListener("click", mostrar_el_carrito );
+
+icon_carrito.addEventListener("click", randerizar_carrito );
 
 
 let altura = 0
@@ -26,6 +43,12 @@ let peso = 0
 let indiceMasaCorporal = 0
 
 let cantidadSesiones = 0
+
+let vacum = 500
+
+let ondas = 750
+
+let masajes = 490
 
 
 function datos(){
@@ -60,9 +83,6 @@ function datos(){
 
     parrafoSesiones.innerHTML = "Se recomiendan las siguientes sesiones: " + cantidadSesiones + " vacumterapia, " + cantidadSesiones + " ondas rusas y " + cantidadSesiones + " masajes"
 
-    console.log(indiceMasaCorporal);
-
-    console.log(altura.value , peso.value);
 }
 
 function paso1(){
@@ -73,9 +93,6 @@ function paso1(){
     divPaso1.style.display = 'none';
 
     divPaso2.style.display = 'flex';
-
-
-    console.log(divPaso1.style)
 }
 
 
@@ -135,11 +152,62 @@ function agregarCarrito(){
 
     let cantidad_comprar = document.getElementById("cantidad_comprar").value;
 
+    let servicio_descontado = ""
+
+    switch(nmbServicio){
+        case "vacumterapia":
+            switch(diaServicio){
+                case "lunes":
+                    servicio_descontado = vacum * 0.8;
+                break
+                case "miercoles":
+                    servicio_descontado = vacum * 0.85;
+                break
+                case "viernes":
+                    servicio_descontado = vacum * 0.9;
+                break
+            }
+        break
+        case "ondas_rusas":
+            switch(diaServicio){
+                case "lunes":
+                    servicio_descontado = ondas * 0.8;
+                break
+                case "miercoles":
+                    servicio_descontado = ondas * 0.85;
+                break
+                case "viernes":
+                    servicio_descontado = ondas * 0.9;
+                break
+            }
+        break
+        case "masajes":
+            switch(diaServicio){
+                case "lunes":
+                    servicio_descontado = ondas * 0.8;
+                break
+                case "miercoles":
+                    servicio_descontado = ondas * 0.85;
+                break
+                case "viernes":
+                    servicio_descontado = ondas * 0.9;
+                break
+            }
+        break
+    }
+
+    let precio_servicio = cantidad_comprar * servicio_descontado
+
     let producto = {
         servicio: nmbServicio,
         dia: diaServicio,
         cantidad: cantidad_comprar,
+        precio: precio_servicio
     }
+
+    // for (producto of carrito){
+
+    // }
 
     carrito.push(producto);
 
@@ -147,14 +215,9 @@ function agregarCarrito(){
     
     localStorage.setItem("carrito_local", json_carrito);
 
-    console.log(carrito);
  }
 
-let vacum = 500
 
-let ondas = 750
-
-let masajes = 490
 
 let btnAgregarCarrito = document.getElementById("btnAgregarCarrito");
 
@@ -173,37 +236,25 @@ function mostrarCarrito(){
 
 btnAgregarCarrito.addEventListener ("click", mostrarCarrito)
 
+
+
 function randerizar_carrito(){
     
+    carrito_en_local = JSON.parse(localStorage.getItem("carrito_local"));
+
+    carrito = carrito_en_local;
+
     let tabla_body = document.getElementById("tabla_body");
 
     tabla_body.innerHTML = ""
 
-    let precio = 0
-
-    
-
     for ( let producto of carrito){
         let fila = document.createElement("tr");
 
-        switch(producto.servicio){
-            case "vacumterapia":
-                precio = vacum;
-                break
-            
-            case "ondas rusas":
-                precio = ondas;
-                break
-            
-            default:
-                precio = masajes;
-                break
-        }
-
         fila.innerHTML = `<td><h4>${producto.servicio}</h4></td>
-                          <td><p>${producto.dia}</p></td>   
+                          <td><h5>${producto.dia}</h5></td>   
                           <td><p>${producto.cantidad}</p></td>
-                          <td><p>$${precio}</p></td>
+                          <td><p>$${producto.precio}</p></td>
                           <i class="fa-solid fa-xmark btn_borrar"  style="color: #ff0000;"></i>
                          `
         fila.style.textAlign = `center`
@@ -213,27 +264,54 @@ function randerizar_carrito(){
     let btn_borrar = document.querySelectorAll(".btn_borrar");
 
     function borrar_producto(e){
-        console.log(e.target)
 
         let nombre_servicio = e.target.parentNode;
 
         nombre_servicio.remove();
 
         let producto_eliminar = nombre_servicio.querySelector("h4").textContent;
-        
-        console.log(producto_eliminar)
+
+        let producto_eliminar_dia = nombre_servicio.querySelector("h5").textContent;
+
+        let producto_eliminar_cantidad = nombre_servicio.querySelector("p").textContent
 
         let carrito_json = JSON.parse(localStorage.getItem("carrito_local"));
     
-        function filtro_producto (nommbre){
+        function filtro_producto (nombre){
             
-            return nommbre.servicio != producto_eliminar;
+            if (nombre.servicio == producto_eliminar){
+                if (nombre.dia == producto_eliminar_dia){
+                    if (nombre.cantidad == producto_eliminar_cantidad){
+                        return false
+                    }
+                    else{
+                        return true
+                    }
+                }
+                else{
+                    return true
+                }
+            }
+            else{
+                return true
+            }
+
         }
         
         let carrito_filtrado = carrito_json.filter( filtro_producto )
 
-        carrito = carrito_filtrado
+        carrito_filtrado_jsn = JSON.stringify(carrito_filtrado);
 
+        carrito = carrito_filtrado;
+
+        localStorage.clear("carrito_local");
+
+        localStorage.setItem("carrito_local", carrito_filtrado_jsn)
+
+        precio_calculado = carrito_filtrado.reduce( calculo_total, 0);
+
+        precio_total.innerHTML = `Precio total: $${precio_calculado}`;
+ 
     }
     
 
@@ -241,149 +319,58 @@ function randerizar_carrito(){
 
         boton.addEventListener("click", borrar_producto)
     }
+
+    let precio_total = document.getElementById("precio_total");
+    
+    function calculo_total (contador, servicio){
+        contador = contador + servicio.precio
+        return contador
+    }
+
+    let precio_calculado = carrito.reduce( calculo_total, 0)
+
+    precio_total.innerHTML = `Precio total: $${precio_calculado}`
+
 }
 
 btnAgregarCarrito.addEventListener ( "click", randerizar_carrito);
 
+let btn_comprar_carrito = document.getElementById("comprar_productos");
 
+function compra_final(){
+    if (carrito != null){
+        localStorage.clear("carrito_local"),
+        window.location.href = "pages/compra_realizada.html" 
+    }
+}
+btn_comprar_carrito.addEventListener( "click" , compra_final );
 
+function mostrar_ubicacion( ubicacion ){
+    let latitud = ubicacion.coords.latitude
+    let longitud = ubicacion.coords.longitude
 
+    let clima = document.getElementsByClassName("clima");
+    console.log(clima)
+    clima.innerHTML = `<p>HOlA</p>`;
 
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitud}&appid=75132db1f8631d3e2bbfe7c47f40595f&units=metric&lang=es`)
+    .then( response=> response.json())
+    .then( datos_clima=>{
+        console.log(datos_clima)
+        let clima = document.getElementById("clima")
+        clima.innerHTML = `<p class="parrafo_agregado">Ubicacion: <span style="color: green;">${datos_clima.name}</span></p>
+                           <p class="parrafo_agregado">Temperatura actual: <span style="color: green;">${datos_clima.main.temp}°C</span></p>
+                           <p class="parrafo_agregado">Condicion actual: <span style="color: green;">${datos_clima.weather[0].description}</span></p>
+                           <img src="https://openweathermap.org/img/wn/${datos_clima.weather[0].icon}@2x.png">`;    
+    })
 
+    console.log(ubicacion)
+    console.log(latitud)
+    console.log(longitud)
 
+}
 
-//Se declaran las variables para el precio de los servicios
-
-
-
-    
-//Se crea una lista de servicios
-
-// class Servicio{
-//     constructor(nombreServicio, precioServicio, diaServicio){
-//         this.nombreServicio = nombreServicio;
-//         this.precioServicio = precioServicio;
-//         this.diaServicio = diaServicio;
-//     }
-
-//     get_datos(){
-//         console.log("............")
-//         console.log("Nombre del servicio:", this.nombreServicio);
-//         console.log("Precio del servicio:", this.precioServicio);
-//         console.log("Dia del servicio", this.diaServicio);
-//         console.log("............")
-//     }
-// }
-
-// let lista_servicios = []
-
-// lista_servicios.push( new Servicio("Vacumterapia", 500 , "lunes"));
-// lista_servicios.push( new Servicio("Ondas rusas", 750 , "miercoles"));
-// lista_servicios.push( new Servicio("Masajes", 490 , "viernes" ));
-
-
-
-// console.log(lista_servicios);
-
-// for ( let servicio of lista_servicios){
-//     servicio.get_datos();
-// }
-
-// Seleccion de servicio
-
-// function busqueda_servicio(servicio){
-//     return servicio.nombreServicio == seleccion_servicio
-// }
-
-// let seleccion_servicio = prompt("Ingrese servicio\nVacumterapia\nOndas rusas\nMasajes");
-
-// let resultado_busqueda = lista_servicios.find( busqueda_servicio );
-
-// while(resultado_busqueda == undefined){
-
-//         alert("No se encontro el servicio")
-//         seleccion_servicio = prompt("Ingrese nuevamente el servicio (respete las  mayusculas y minusculas)\nVacumterapia\nOndas rusas\nMasajes")
-//         resultado_busqueda = lista_servicios.find( busqueda_servicio )
-// }
-
-// Se evalua que servicio pidio el cliente
-
-// let precio_servicio = 0
-
-// if ( seleccion_servicio == "Vacumterapia"){
-//     precio_servicio = vacum
-// }
-// else if ( seleccion_servicio == "Ondas rusas"){
-//     precio_servicio = ondas
-// }
-// else if ( seleccion_servicio == "Masajes"){
-//     precio_servicio = masajes
-// }
-// else{
-//     console.log("Servicio incorrecto")
-// }
-
-// Se calcula la cantidad de servicios que solicita el cliente
-
-// let cantidad_servicio = 0
-
-// do{
-//     cantidad_servicio = prompt("Ingrese la cantidad de sesiones que desea realizar")
-// }while(isNaN(cantidad_servicio))
-
-// Se solicita el dia para realizar la sesion del servicio
-
-// function busqueda_servicio_dia (servicio){
-//     return servicio.diaServicio == dias_servicio
-// }
-
-// let dias_servicio = prompt("Ingrese el dia a realizar el servicio\nlunes (20% de descuento)\nmiercoles (15% de descuento)\nviernes (10% de descuento)");
-
-// let resultado_busqueda_dias = lista_servicios.find( busqueda_servicio_dia );
-
-// while(resultado_busqueda_dias == undefined){
-
-//     alert("El dia ingresado no posee servicios activos")
-//     dias_servicio = prompt("Ingrese nuevamente el dia del servicio (respete las mayusculas y minusculas)\nlunes -- Vacumterapia\nmiercoles -- Ondas rusas\nviernes -- Masajes")
-//     resultado_busqueda_dias = lista_servicios.find( busqueda_servicio_dia )
-// }
-
-// Se calcula el porcentaje de descuento dependiendo del dia seleccionado
-
-// let descuento_dia = 0
-
-// if (dias_servicio == "lunes"){
-//     descuento_dia = 0.8
-// }
-// else if (dias_servicio == "miercoles"){
-//     descuento_dia = 0.85
-// }
-// else if (dias_servicio == "viernes"){
-//     descuento_dia = 0.90
-// }
-// else{
-//     console.log("Dia sin descuento")
-// }
-
-// Se calcula el precio final
-
-// let precio_final = 0
-
-// function precio_total(servicio, cantidad, descuento){
-//     precio_final = (servicio * cantidad) * descuento
-// }
-
-// precio_total(precio_servicio, cantidad_servicio, descuento_dia);
-
-// alert(`El total a pagar es: $${precio_final}`)
-
-
-
-
-
-
-
-
+navigator.geolocation.getCurrentPosition (mostrar_ubicacion);
 
 
 

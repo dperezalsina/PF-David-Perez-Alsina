@@ -22,12 +22,25 @@
 }
 .navbar > .fa-bars {
   display: none;
+  order: 2 !important;
+}
+.navbar #clima {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 100%;
+  align-self: center;
+  order: 3 !important;
+  font-size: 20px;
+  color: #735B46;
+  padding: 15px;
 }
 .navbar > ul {
   height: 100%;
   display: flex;
   list-style: none;
-  order: 3 !important;
+  order: 4 !important;
 }
 .navbar > ul > li {
   position: relative;
@@ -123,6 +136,33 @@
     opacity: 1;
   }
 }
+.parrafo_agregado {
+  margin: 10px;
+}
+
+.body_compra {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+.body_compra > div {
+  position: absolute;
+  width: 250px;
+  height: 80px;
+  right: 45%;
+  align-self: center;
+}
+.body_compra > div #volver {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 32px;
+  background-color: #F2E7DC;
+  color: #735B46;
+  border-radius: 10px;
+}
+
 main {
   position: relative;
 }
@@ -166,6 +206,26 @@ main {
   font-size: 22px;
   width: 100%;
   border-bottom: #735B46 solid 1px;
+}
+#carrito_compras .precio_final {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border: solid 3px #735B46;
+  position: absolute;
+  display: flex;
+  bottom: 0px;
+}
+#carrito_compras .precio_final > p {
+  padding: 10px;
+  font-size: 42px;
+  display: block;
+}
+#carrito_compras .precio_final > button {
+  font-size: 28px;
+  margin: 10px;
+  display: block;
 }
 
 .cards .card2 div p, .cards .card1 div p {
@@ -287,14 +347,14 @@ main {
     height: 200px;
   }
 }
-.head div {
+.head > div {
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
 }
-.head div h1 {
+.head > div h1 {
   display: block;
   width: 650px;
   height: 80px;
@@ -305,7 +365,7 @@ main {
   text-align: center;
 }
 @media (max-width: 480px) {
-  .head div h1 {
+  .head > div h1 {
     font-size: 44px;
   }
 }

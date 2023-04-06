@@ -1,5 +1,10 @@
 
+//Se comienza el script declarando un array vacio para el carrito
+
 let carrito = [];
+
+//Se comprueba en el localstorage si hay un arrary generado para carrito.
+//En caso de encontrar uno se reemplaza por el carrito vacio, caso contrario se agrega el carrito vacio al storage
 
 let carrito_en_local = JSON.parse(localStorage.getItem("carrito_local"))
 
@@ -14,7 +19,7 @@ else{
 }
 
 
-
+//Se captura el icono de carrito y se verifica si el carrito ya se muestra o no para mostrarlo al hacer click en el icono
 
 let mostrar_carrito = document.getElementById("icon_carrito")
 
@@ -35,6 +40,8 @@ icon_carrito.addEventListener("click", mostrar_el_carrito );
 
 icon_carrito.addEventListener("click", randerizar_carrito );
 
+//Se declaran variables para el calculo de la masa corporal, asi se genera una recomendacion de sesiones. 
+//Tambien se declaran los precios de los servicios
 
 let altura = 0
 
@@ -50,6 +57,8 @@ let ondas = 750
 
 let masajes = 490
 
+//Se crea una funcion para capturar los datos ingresados de altura y peso y generar el indice de masa corporal y las recomendaciones
+//dependiendo de cual es su indice se le recomiendan al usuario x cantidad de sesiones
 
 function datos(){
 
@@ -84,6 +93,8 @@ function datos(){
     parrafoSesiones.innerHTML = "Se recomiendan las siguientes sesiones: " + cantidadSesiones + " vacumterapia, " + cantidadSesiones + " ondas rusas y " + cantidadSesiones + " masajes"
 
 }
+
+//Se genera una funcion para capturar los botones de cambio de secuencia
 
 function paso1(){
     let divPaso1 = document.getElementById("inicioLista");
@@ -145,6 +156,9 @@ function volverPaso2(){
 
 btnAtras.addEventListener( "click" , volverPaso2 )
 
+//Se genera la funcion para crear un objeto y agregarlo al carrito actual
+//Utilizando los switch determina el precio del producto agregado
+
 function agregarCarrito(){
     let nmbServicio = document.querySelector('input[name="servicio"]:checked').value;
 
@@ -205,10 +219,6 @@ function agregarCarrito(){
         precio: precio_servicio
     }
 
-    // for (producto of carrito){
-
-    // }
-
     carrito.push(producto);
 
     let json_carrito = JSON.stringify(carrito);
@@ -236,7 +246,8 @@ function mostrarCarrito(){
 
 btnAgregarCarrito.addEventListener ("click", mostrarCarrito)
 
-
+//Utilizando la funcion randerizar_carrito toma los datos del localstorage y los sobreescribe con el carrito para actualizarlo
+//Luego se genera una fila en la tabla con el producto agregado y se le asigna un boton para borrar el mismo producto
 
 function randerizar_carrito(){
     
@@ -263,6 +274,8 @@ function randerizar_carrito(){
 
     let btn_borrar = document.querySelectorAll(".btn_borrar");
 
+    //Se genera la funcion borrar_producto para capturar el boton de borrar el producto para borrarlo tanto de la lista en pantalla como del localstorage
+
     function borrar_producto(e){
 
         let nombre_servicio = e.target.parentNode;
@@ -276,7 +289,10 @@ function randerizar_carrito(){
         let producto_eliminar_cantidad = nombre_servicio.querySelector("p").textContent
 
         let carrito_json = JSON.parse(localStorage.getItem("carrito_local"));
-    
+
+        //Utilizando la funcion filtro_producto se determina cual es el producto a borrar del array del storage, para conseguir una copia del storage
+        //pero sin el producto que se desea borrar luego se actualiza el array del carrito actual
+
         function filtro_producto (nombre){
             
             if (nombre.servicio == producto_eliminar){
@@ -322,6 +338,9 @@ function randerizar_carrito(){
 
     let precio_total = document.getElementById("precio_total");
     
+//Utilizando la funcion calculo_total como parametro para realizar un reduce sobre el carrito y de esta manera sumar los precios de
+//todos los productos agregados al carrito
+
     function calculo_total (contador, servicio){
         contador = contador + servicio.precio
         return contador
@@ -337,11 +356,15 @@ btnAgregarCarrito.addEventListener ( "click", randerizar_carrito);
 
 let btn_comprar_carrito = document.getElementById("comprar_productos");
 
+//Con la funcion compra final se determina si el carrito esta con producotos o se encuntra vacio para realizar la compra
+//y redirigir al usuario hacia la pagina de compra realizada
+
 function compra_final(){
-    if (carrito != null){
+    if (carrito != 0){
         localStorage.clear("carrito_local"),
         window.location.href = "pages/compra_realizada.html" 
     }
+
 }
 btn_comprar_carrito.addEventListener( "click" , compra_final );
 

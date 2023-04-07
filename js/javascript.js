@@ -218,8 +218,24 @@ function agregarCarrito(){
         cantidad: cantidad_comprar,
         precio: precio_servicio
     }
+    
+    function alta_producto(objeto){
+        return objeto.servicio == producto.servicio && objeto.dia == producto.dia && objeto.cantidad == producto.cantidad
+    }
 
-    carrito.push(producto);
+    let producto_nuevo = carrito.find( alta_producto )
+
+    if (producto_nuevo == undefined){
+        carrito.push(producto);
+    }
+    else{
+        Toastify({
+            text: "Su producto ya se encuentra en el carrito",
+            duration: 3000,
+            position: "center",
+        }).showToast();
+    
+    }
 
     let json_carrito = JSON.stringify(carrito);
     
@@ -262,7 +278,7 @@ function randerizar_carrito(){
     for ( let producto of carrito){
         let fila = document.createElement("tr");
 
-        fila.innerHTML = `<td><h4>${producto.servicio}</h4></td>
+        fila.innerHTML= `<td><h4>${producto.servicio}</h4></td>
                           <td><h5>${producto.dia}</h5></td>   
                           <td><p>${producto.cantidad}</p></td>
                           <td><p>$${producto.precio}</p></td>
@@ -311,7 +327,6 @@ function randerizar_carrito(){
             else{
                 return true
             }
-
         }
         
         let carrito_filtrado = carrito_json.filter( filtro_producto )
